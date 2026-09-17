@@ -1,0 +1,81 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches e Ambientes Virtuais
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.venv
+env/
+venv/
+ENV/
+
+# R Caches e Histórico
+.Rhistory
+.RData
+.Rproj.user/
+*.Rout
+
+# Arquivos Temporários, Locks e Bancos Temporários
+*.duckdb.tmp
+*.duckdb.wal
+*.tmp
+*.log
+
+# Artefatos e Auxiliares do LaTeX
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# Pasta de Scratch e Testes Temporários do Agente
+scratch/
+.tempmediaStorage/
+
+# Arquivos de dados pesados e brutos do TSE (reconstruídos via ETL)
+data/raw/**/*
+!data/raw/.gitkeep
+!data/raw/fotos_tse/
+!data/raw/fotos_tse/*.zip
+
+# Propostas de Governo em PDF (212 arquivos oficiais do TSE para Presidente e Governador)
+data/propostas/**/*
+!data/propostas/.gitkeep
+!frontend/planos/
+!frontend/planos/*.pdf
+!frontend/planos/.gitkeep
+
+# Fotos de candidatos (baixadas sob demanda pela API / TSE)
+frontend/fotos/**/*
+!frontend/fotos/.gitkeep
+
+# Dependências Node.js locais
+node_modules/
+frontend/node_modules/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Backups locais e arquivos arquivados/temporários de teste
+archive/
+backup_pre_broadsheet/
+backup_checkpoint_redesign_20260910/
+eleicoes_2026.db
+data/eleicoes2026.db
+test_shadow.html
+refs/
+.agents/
+
+

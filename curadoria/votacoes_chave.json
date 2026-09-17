@@ -1,0 +1,74 @@
+[
+  {
+    "id_votacao": "2354508-100",
+    "sigla_orgao": "PLEN",
+    "titulo": "Reforma Tributária (PEC 45/2019 - 1º Turno)",
+    "data": "2023-07-06",
+    "tema": "Economia & Tributação",
+    "eixo_ideologico": "Tributação & Estado",
+    "descricao": "Votação em 1º turno da proposta de Reforma Tributária sobre o consumo (criação do IBS e CBS).",
+    "orientacao_governo": "SIM",
+    "resumo_voto_sim": "A favor da simplificação tributária e unificação de impostos federais/estaduais.",
+    "resumo_voto_nao": "Contra o modelo centralizado de arrecadação e conselho federativo."
+  },
+  {
+    "id_votacao": "2363020-50",
+    "sigla_orgao": "PLEN",
+    "titulo": "Novo Arcabouço Fiscal (PLP 93/2023)",
+    "data": "2023-05-23",
+    "tema": "Economia & Gastos Públicos",
+    "eixo_ideologico": "Papel do Estado & Finanças",
+    "descricao": "Regime fiscal sustentável para substituir o teto de gastos e limitar crescimento de despesas.",
+    "orientacao_governo": "SIM",
+    "resumo_voto_sim": "A favor de regras fiscais flexíveis com piso para investimentos públicos.",
+    "resumo_voto_nao": "A favor de regras mais rígidas de corte de gastos ou contra qualquer trava fiscal."
+  },
+  {
+    "id_votacao": "2364010-80",
+    "sigla_orgao": "PLEN",
+    "titulo": "Marco Temporal de Terras Indígenas (PL 490/2007)",
+    "data": "2023-05-30",
+    "tema": "Meio Ambiente & Terras",
+    "eixo_ideologico": "Costumes & Meio Ambiente",
+    "descricao": "Limitação da demarcação de terras indígenas às áreas ocupadas em 05/10/1988.",
+    "orientacao_governo": "NÃO",
+    "resumo_voto_sim": "A favor da segurança jurídica para proprietários rurais e agronegócio.",
+    "resumo_voto_nao": "A favor da proteção ampla aos povos originários e preservação ambiental."
+  },
+  {
+    "id_votacao": "2412345-40",
+    "sigla_orgao": "PLEN",
+    "titulo": "Fim da 'Saidinha' de Presos (PL 2253/2022 - Veto)",
+    "data": "2024-05-28",
+    "tema": "Segurança Pública",
+    "eixo_ideologico": "Segurança Pública & Justiça",
+    "descricao": "Derrubada do veto presidencial que permitia saída temporária de presos para visitas familiares.",
+    "orientacao_governo": "NÃO",
+    "resumo_voto_sim": "A favor do fim das saídas temporárias e endurecimento penal.",
+    "resumo_voto_nao": "A favor da ressocialização gradual e manutenção do veto para visitas."
+  },
+  {
+    "id_votacao": "2425678-20",
+    "sigla_orgao": "PLEN",
+    "titulo": "PEC das Drogas (PEC 45/2023)",
+    "data": "2024-06-12",
+    "tema": "Segurança & Saúde Pública",
+    "eixo_ideologico": "Costumes & Segurança",
+    "descricao": "Criminalização da posse e do porte de qualquer quantidade de entorpecentes.",
+    "orientacao_governo": "LIBERADA",
+    "resumo_voto_sim": "A favor da criminalização constitucional estrita de qualquer quantidade de droga.",
+    "resumo_voto_nao": "A favor da diferenciação de usuário e traficante com foco em saúde pública."
+  },
+  {
+    "id_votacao": "2389100-30",
+    "sigla_orgao": "PLEN",
+    "titulo": "Taxação de Super-Ricos e Fundos Exclusivos (PL 4173/2023)",
+    "data": "2023-10-25",
+    "tema": "Economia & Tributação",
+    "eixo_ideologico": "Tributação & Redistribuição",
+    "descricao": "Tributação de fundos de investimentos fechados no Brasil e investimentos no exterior (offshores).",
+    "orientacao_governo": "SIM",
+    "resumo_voto_sim": "A favor de maior justiça fiscal e tributação progressiva sobre grandes patrimônios.",
+    "resumo_voto_nao": "Contra aumento de impostos sobre investimentos de capital."
+  }
+]

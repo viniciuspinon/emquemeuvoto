@@ -1,0 +1,2597 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Metadados Principais & SEO -->
+  <title>Em Quem Eu Voto 2026 — O App para Escolher seus Candidatos</title>
+  <meta name="description"
+    content="O app para te ajudar a escolher seus candidatos nas Eleições de 2026. Pesquise e compare candidatos para Presidente, Governador, Senador e Deputado com fotos, propostas oficiais na íntegra e dados do TSE.">
+  <!-- Google tag (gtag.js) - Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3J20GBXWJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N3J20GBXWJ', { send_page_view: true });
+  </script>
+  
+  <link rel="canonical" href="https://emquemeuvoto.onrender.com/">
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+
+  <!-- Open Graph (WhatsApp, Telegram, Facebook, LinkedIn, Discord) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emquemeuvoto.onrender.com/">
+  <meta property="og:title" content="Em Quem Eu Voto 2026 — Escolha seus Candidatos">
+  <meta property="og:description"
+    content="O jeito mais fácil de escolher seus candidatos em 2026. Compare propostas na íntegra, veja fotos e consulte dados oficiais do TSE.">
+  <meta property="og:image" content="https://emquemeuvoto.onrender.com/static/img/og_share_emquemeuvoto.jpg?v=20260917b">
+  <meta property="og:image:secure_url" content="https://emquemeuvoto.onrender.com/static/img/og_share_emquemeuvoto.jpg?v=20260917b">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Em Quem Eu Voto 2026 — Escolha seus Candidatos">
+  <meta property="og:site_name" content="Em Quem Eu Voto">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Em Quem Eu Voto 2026 — Escolha seus Candidatos">
+  <meta name="twitter:description"
+    content="O jeito mais fácil de escolher seus candidatos em 2026. Compare propostas na íntegra, veja fotos e consulte dados oficiais do TSE.">
+  <meta name="twitter:image" content="https://emquemeuvoto.onrender.com/static/img/og_share_emquemeuvoto.jpg?v=20260917b">
+  <meta name="twitter:image:alt" content="Em Quem Eu Voto 2026 — Escolha seus Candidatos">
+
+  <!-- Fontes Tipográficas — Design System v2.0 Editorial -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Primárias DS: DM Serif Display (editorial) + Inter (interface) + JetBrains Mono (dados) -->
+  <!-- Santinho/Colinha extras: Bebas Neue, Space Grotesk, Plus Jakarta Sans -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/tokens.css?v=2.0">
+  <link rel="stylesheet" href="/static/css/style.css?v=20260917_v26">
+</head>
+
+<body>
+
+  <div class="app-shell-layout">
+
+    <!-- Backdrop do Painel Lateral no Mobile -->
+    <div class="mobile-sidebar-backdrop" id="mobileSidebarBackdrop" onclick="App.closeMobileSidebar()"></div>
+
+    <!-- Painel Lateral de Filtros (Uniformemente Azul Petróleo & Identidade) -->
+    <aside class="sidebar-panel" id="sidebarPanel">
+      <!-- Cabeçalho Exclusivo para Mobile -->
+      <div class="mobile-sidebar-header">
+        <div class="mobile-sidebar-header-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          <span>Filtros &amp; Navegação</span>
+        </div>
+        <button type="button" class="btn-close-mobile-sidebar" onclick="App.closeMobileSidebar()"
+          aria-label="Fechar painel de filtros">✕</button>
+      </div>
+
+      <!-- Marca Institucional no Topo da Sidebar (Texto à esquerda e Logo à direita) -->
+      <div class="sidebar-brand-block">
+        <div class="sidebar-brand-lockup">
+          <div class="sidebar-brand-text-wrap">
+            <div class="sidebar-brand-title">
+              <div class="brand-line-1">EM QUEM</div>
+              <div class="brand-line-2">EU <span class="brand-word-voto">VOTO</span></div>
+            </div>
+          </div>
+          <div class="sidebar-brand-logo-wrap">
+            <img src="/static/img/logo_emquemeuvoto_flat.png" alt="Em Quem Eu Voto" class="sidebar-brand-logo-img">
+          </div>
+        </div>
+        <div class="sidebar-brand-subrow">
+          <span class="sidebar-brand-tagline">Por um voto bem informado.</span>
+        </div>
+      </div>
+
+      <!-- Menu Principal de Navegação (Modo Editorial de Navegação) -->
+      <nav class="sidebar-nav-menu" id="sidebarNavMenu" aria-label="Navegação">
+        <div class="nav-section-label">Navegação</div>
+        <ul class="nav-menu-list">
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn active" id="navItemCandidates"
+              onclick="App.navigateToCandidates()" title="Catálogo e busca de candidatos registrados">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Candidatos</span>
+            </button>
+          </li>
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn" id="navItemQuiz" onclick="QuizController.open()"
+              title="Descubra a sua afinidade ideológica com os partidos">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Quiz Ideológico</span>
+            </button>
+          </li>
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn" id="navItemCompare" onclick="CompareController.openModal()"
+              title="Compare candidatos lado a lado em propostas, finanças e perfil">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                  <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                  <path d="M7 21h10"/>
+                  <path d="M12 3v18"/>
+                  <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Comparar</span>
+            </button>
+          </li>
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn" id="navItemSaved" onclick="ListManager.openSavedModal()"
+              title="Acesse sua colinha eleitoral e candidatos favoritados">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Salvos &amp; Colinha</span>
+              <span class="nav-saved-dot" id="sidebarSavedBadge" style="display: none;">0</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="nav-section-label" style="margin-top: 0.75rem;">Sobre</div>
+        <ul class="nav-menu-list">
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn" id="navItemSobre" onclick="App.openSobreModal()"
+              title="Conheça o propósito do projeto, fontes oficiais e metodologia">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Sobre o Projeto</span>
+            </button>
+          </li>
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn" id="navItemTutorial" onclick="TutorialTour.start()"
+              title="Aprenda a usar todos os recursos da plataforma com o tutorial interativo">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Tutorial</span>
+            </button>
+          </li>
+          <li class="nav-menu-item">
+            <button type="button" class="nav-menu-btn nav-menu-btn-apoie" id="navItemApoie"
+              onclick="App.openApoieModal()" title="Contribua com o desenvolvimento independente do projeto">
+              <span class="nav-menu-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </span>
+              <span class="nav-menu-label">Apoie</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Container Sticky dos Filtros (Desce e sobe com a rolagem da página) -->
+      <div class="sidebar-sticky-wrap" id="sidebarStickyWrap">
+        <!-- Filtro: Local, Cargo & Mandato -->
+        <div class="filter-box" id="sidebarFiltersBox">
+          <div class="classic-layout-switch-wrap">
+            <button type="button" class="btn-classic-switch-to-menu" onclick="App.toggleLayoutMode()"
+              title="Experimente o novo Menu Principal na Lateral">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10" />
+                <polyline points="23 20 23 14 17 14" />
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+              </svg>
+              <span>Alternar para Menu Principal</span>
+            </button>
+          </div>
+          <div class="filter-header-label">
+            <span>Local, Cargo &amp; Mandato</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Estado / Âmbito:</label>
+            <div class="sidebar-location-picker">
+              <select id="selectUf" class="form-select" style="flex: 1; height: 32px; box-sizing: border-box;"
+                onchange="App.setUfFilter(this.value)">
+                <!-- Preenchido dinamicamente via JS -->
+              </select>
+              <button type="button" class="btn-map-icon-btn"
+                style="height: 26px; width: 26px; box-sizing: border-box; flex-shrink: 0;" onclick="App.openMapModal()"
+                title="Selecionar Estado no Mapa Interativo">
+                <svg width="15" height="10.5" viewBox="0 0 20 14" style="border-radius: 2px; display: block;">
+                  <rect width="20" height="14" fill="#009C3B" />
+                  <polygon points="10,1.5 18.5,7 10,12.5 1.5,7" fill="#FFDF00" />
+                  <circle cx="10" cy="7" r="3.2" fill="#002776" />
+                  <path d="M 6.9,7.1 A 3.2 3.2 0 0 0 13.1,6.7" stroke="#FFFFFF" stroke-width="0.55" fill="none" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <label class="form-label" style="margin-bottom: 0;">Cargos Pretendidos:</label>
+              <button type="button" class="btn-text-discreet" onclick="App.setCargoFilter('todos')"
+                title="Limpar filtro de cargos">Limpar</button>
+            </div>
+            <div class="cargo-pills" id="cargoPillsContainer"></div>
+          </div>
+
+          <!-- Mandato Atual (Padrão Branco Nativamente / Escurecendo Ativo) -->
+          <div class="form-group" style="margin-top: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+              <label class="form-label" style="margin-bottom: 0;">Mandato Atual:</label>
+              <button type="button" class="btn-text-discreet" id="btnMandateTodos"
+                onclick="App.setMandateFilter('todos')" title="Exibir todos os candidatos independente do mandato">
+                Ver todos
+              </button>
+            </div>
+            <div class="mandate-toggle-group">
+              <button type="button" class="btn-mandate-toggle" id="btnMandateReeleicao"
+                onclick="App.setMandateFilter('reeleicao')"
+                title="Apenas candidatos disputando o mesmo cargo (reeleição)">
+                <span>⚡ Reeleição</span>
+              </button>
+              <button type="button" class="btn-mandate-toggle" id="btnMandateOutroCargo"
+                onclick="App.setMandateFilter('outro_cargo')"
+                title="Candidatos com mandato atual concorrendo a outro cargo">
+                <span>Em exercício</span>
+                <span class="btn-mandate-subtext">(outro cargo)</span>
+              </button>
+              <button type="button" class="btn-mandate-toggle" id="btnMandateSemMandato"
+                onclick="App.setMandateFilter('sem_mandato')" title="Candidatos sem mandato público no momento">
+                <span>Não consta</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtro: Ideologia & Partidos -->
+        <div class="filter-box" id="filterBoxIdeologiaPartidos">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; gap: 0.25rem;">
+            <div class="filter-header-label"
+              style="margin-bottom: 0; display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap;">
+              <span>Ideologia &amp; Partidos</span>
+              <button type="button" class="btn-info-circle sidebar-info-circle" id="btnMetodologiaIdeologia"
+                onclick="App.openMetodologiaModal()"
+                title="Média ideológica partidária consolidada na literatura de ciência política.">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
+            </div>
+            <button type="button" class="btn-text-discreet" id="btnIdeoTodos" onclick="App.setIdeologyRange(1, 7)"
+              title="Exibir todos os espectros políticos" style="flex-shrink: 0; white-space: nowrap;">
+              Ver todos
+            </button>
+          </div>
+          <div id="ideologiaCurrentLabel" class="ideologia-current-label">
+            Todos os espectros
+          </div>
+
+          <!-- Slider Duplo -->
+          <div class="ideologia-slider-wrapper">
+            <div class="ideologia-track-gradient"></div>
+            <div class="ideologia-track-highlight" id="ideologiaTrackHighlight"></div>
+            <input type="range" class="ideologia-range-input ideo-min-thumb" id="ideologiaMinSlider" min="1" max="7"
+              step="1" value="1" oninput="App.onIdeologySliderInput('min', this.value)">
+            <input type="range" class="ideologia-range-input ideo-max-thumb" id="ideologiaMaxSlider" min="1" max="7"
+              step="1" value="7" oninput="App.onIdeologySliderInput('max', this.value)">
+          </div>
+
+          <!-- Botões de Segmento Rápido -->
+          <div class="ideologia-quick-segments">
+            <button type="button" class="btn-ideo-segment" id="btnIdeoEsq" onclick="App.setIdeologyRange(1, 3)"
+              title="Filtrar Esquerda (faixas 1 a 3)">
+              <span>Esquerda</span>
+            </button>
+            <button type="button" class="btn-ideo-segment" id="btnIdeoCentro" onclick="App.setIdeologyRange(3, 5)"
+              title="Filtrar Centro (faixas 3 a 5)">
+              <span>Centro</span>
+            </button>
+            <button type="button" class="btn-ideo-segment" id="btnIdeoDir" onclick="App.setIdeologyRange(5, 7)"
+              title="Filtrar Direita (faixas 5 a 7)">
+              <span>Direita</span>
+            </button>
+          </div>
+
+          <!-- Atalho para Quiz (Estilo Referência) -->
+          <div class="sidebar-quiz-box" onclick="QuizController.open()"
+            title="Descubra o seu posicionamento ideológico no espectro eleitoral">
+            <div class="sidebar-quiz-left">
+              <span class="sidebar-quiz-icon">💡</span>
+              <div class="sidebar-quiz-text-stack">
+                <span class="sidebar-quiz-line1">Descubra a sua com</span>
+                <span class="sidebar-quiz-line2">7 perguntas</span>
+              </div>
+            </div>
+            <button type="button" class="btn-sidebar-quiz" onclick="event.stopPropagation(); QuizController.open()">
+              Fazer<br>Quiz
+            </button>
+          </div>
+
+          <!-- Divisor Sutil entre Ideologia e Partidos -->
+          <div style="margin: 0.85rem 0 0.65rem 0; border-top: 1px solid rgba(255, 255, 255, 0.15);"></div>
+
+          <!-- Subseção de Partidos -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+            <div class="filter-header-label"
+              style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; color: #FFFFFF; margin-bottom: 0; font-weight: 800;">
+              Partidos</div>
+            <span style="font-size: 0.66rem; color: #A3DCE4;">Clique 1x priorizar | 2x ocultar</span>
+          </div>
+          <div class="chips-grid" id="partidosChipsContainer"></div>
+        </div>
+      </div>
+
+      <!-- Rodapé de Ações Fixo para Mobile -->
+      <div class="mobile-sidebar-footer">
+        <button type="button" class="btn-mobile-sidebar-clear" onclick="App.clearAllFilters()">Limpar</button>
+        <button type="button" class="btn-mobile-sidebar-apply" onclick="App.closeMobileSidebar()">
+          Ver Candidatos (<span id="mobileSidebarCandidateCount">0</span>)
+        </button>
+      </div>
+    </aside>
+
+    <!-- Coluna Principal de Conteúdo (Hero Editorial, Busca, Filtros e Feed) -->
+    <main class="main-content-column">
+
+      <!-- Top Bar da Coluna Principal (Live Stats no lugar de slogan + Ações Rápidas) -->
+      <header class="app-header main-top-bar">
+        <div class="main-top-bar-left">
+          <button type="button" class="btn-sidebar-toggle-discreet" id="btnToggleSidebar" onclick="App.toggleSidebar()"
+            title="Recolher / Expandir painel de filtros" aria-label="Recolher ou expandir painel de filtros">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <!-- Informações da Eleição no Cabeçalho (Sem bloco/borda, fluido e integrado) -->
+          <div class="header-stats-card" id="feedStatsCard">
+            <div class="stats-badge-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+              </svg>
+            </div>
+            <div class="stats-badge-body">
+              <div class="stats-primary-line">
+                <span class="stats-big-number" id="statsBigNumber">19.379</span>
+                <span class="stats-label-inline" id="statsLabelInline">candidatos registrados (2026)</span>
+                <span class="stats-filtered-tag" id="statsFilteredTag" style="display: none;"
+                  title="Filtros aplicados à listagem">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                  </svg>
+                  <span>Filtrado</span>
+                </span>
+              </div>
+              <div class="stats-secondary-line">
+                <span class="stats-status-dot"></span>
+                <span id="feedStatsDetails"><strong>17.108</strong> aptos • <strong>2.271</strong> em julgamento</span>
+              </div>
+            </div>
+
+            <!-- Linha vertical divisória -->
+            <div class="stats-vertical-divider" aria-hidden="true"></div>
+
+            <!-- Bloco Separado: Atualizado em -->
+            <div class="stats-updated-col">
+              <span class="stats-updated-label">ATUALIZADO EM</span>
+              <span class="stats-updated-val"><strong id="headerUpdatedDate">07/09/2026</strong> <span
+                  id="headerUpdatedTime">às 19:30</span></span>
+              <span id="headerLastUpdated" style="display: none;">07/09/2026 às 19:30</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" class="btn-theme-minimal" id="btnThemeToggle" onclick="App.toggleTheme()"
+            title="Alternar entre Edição Papel e Noturna" aria-label="Alternar Edição Papel / Noturna">
+            <svg id="themeIconSun" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              style="display: none; width: 18px; height: 18px;">
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <path
+                d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77">
+              </path>
+            </svg>
+            <svg id="themeIconMoon" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              style="display: block; width: 18px; height: 18px;">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button type="button" class="btn-theme-minimal" id="btnLayoutToggle" onclick="App.toggleLayoutMode()"
+            title="Alternar modo de layout (Menu Lateral / Filtros Laterais)" aria-label="Alternar interface">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+          </button>
+          <button type="button" class="btn-header" id="btnHeaderSaved" onclick="ListManager.openSavedModal()"
+            title="Candidatos Salvos & Minha Colinha">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Salvos</span>
+            <span class="badge-count" id="savedCountBadge">0</span>
+          </button>
+          <button type="button" class="btn-header primary" onclick="QuizController.open()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
+              <circle cx="12" cy="12" r="10" />
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+            </svg>
+            <span>Quiz Ideológico</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Painel Superior de Filtros Cívicos (Reorganização Editorial Top Feed) -->
+      <div class="feed-top-filter-panel" id="topFilterPanel">
+
+        <!-- Linha 1: Estado + Cargo -->
+        <div class="top-filter-row top-filter-row-1">
+          <div class="top-filter-field top-field-uf">
+            <label class="top-field-label" for="topSelectUf">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Estado:</span>
+            </label>
+            <div class="top-uf-select-wrap">
+              <select id="topSelectUf" class="top-form-select" onchange="App.setUfFilter(this.value)">
+                <!-- Preenchido dinamicamente via JS -->
+              </select>
+              <button type="button" class="btn-top-map-btn" onclick="App.openMapModal()"
+                title="Selecionar no Mapa do Brasil">
+                <svg width="15" height="10.5" viewBox="0 0 20 14" style="border-radius: 2px; display: block;">
+                  <rect width="20" height="14" fill="#009C3B"></rect>
+                  <polygon points="10,1.5 18.5,7 10,12.5 1.5,7" fill="#FFDF00"></polygon>
+                  <circle cx="10" cy="7" r="3.2" fill="#002776"></circle>
+                  <path d="M 6.9,7.1 A 3.2 3.2 0 0 0 13.1,6.7" stroke="#FFFFFF" stroke-width="0.55" fill="none"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="top-filter-field top-field-cargo">
+            <div class="top-field-header-with-action">
+              <label class="top-field-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Cargo:</span>
+              </label>
+            </div>
+            <div class="top-cargo-pills" id="topCargoPillsContainer">
+              <!-- Preenchido dinamicamente via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha 2: Afinidade política (Ideologia e Partidos) + Mandato -->
+        <div class="top-filter-row top-filter-row-2">
+          <!-- Afinidade política -->
+          <div class="top-filter-group top-group-affinity">
+            <div class="top-group-header">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              <span>Afinidade política</span>
+            </div>
+            <div class="top-group-controls">
+              <!-- Dropdown / Popover de Ideologia -->
+              <div class="top-popover-dropdown-wrap" id="topIdeologiaDropdownWrap">
+                <button type="button" class="btn-top-filter-dropdown" id="btnTopIdeologia"
+                  onclick="App.toggleTopPopover('ideologia', event)" title="Filtrar por espectro ideológico">
+                  <svg class="dropdown-leading-svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                  </svg>
+                  <span class="dropdown-label" id="topIdeologiaDropdownLabel">Ideologia: <strong>Todos</strong></span>
+                  <svg class="dropdown-caret-svg" width="9" height="9" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div class="top-popover-panel top-popover-ideologia" id="topIdeologiaPopover" style="display: none;"
+                  onclick="event.stopPropagation()">
+                  <div class="top-popover-header">
+                    <div class="top-popover-title">Espectro Político</div>
+                    <button type="button" class="btn-text-discreet" onclick="App.setIdeologyRange(1, 7)">Ver
+                      todos</button>
+                  </div>
+                  <div id="topIdeologiaCurrentLabel" class="ideologia-current-label">Todos os espectros</div>
+                  <div class="ideologia-slider-wrapper">
+                    <div class="ideologia-track-gradient"></div>
+                    <div class="ideologia-track-highlight" id="topIdeologiaTrackHighlight"></div>
+                    <input type="range" class="ideologia-range-input ideo-min-thumb" id="topIdeologiaMinSlider" min="1"
+                      max="7" step="1" value="1" oninput="App.onTopIdeologySliderInput('min', this.value)">
+                    <input type="range" class="ideologia-range-input ideo-max-thumb" id="topIdeologiaMaxSlider" min="1"
+                      max="7" step="1" value="7" oninput="App.onTopIdeologySliderInput('max', this.value)">
+                  </div>
+                  <div class="ideologia-quick-segments">
+                    <button type="button" class="btn-ideo-segment" id="topBtnIdeoEsq"
+                      onclick="App.setIdeologyRange(1, 3)">Esquerda</button>
+                    <button type="button" class="btn-ideo-segment" id="topBtnIdeoCentro"
+                      onclick="App.setIdeologyRange(3, 5)">Centro</button>
+                    <button type="button" class="btn-ideo-segment" id="topBtnIdeoDir"
+                      onclick="App.setIdeologyRange(5, 7)">Direita</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dropdown / Popover de Partidos -->
+              <div class="top-popover-dropdown-wrap" id="topPartidosDropdownWrap">
+                <button type="button" class="btn-top-filter-dropdown" id="btnTopPartidos"
+                  onclick="App.toggleTopPopover('partidos', event)" title="Priorizar ou ocultar partidos">
+                  <svg class="dropdown-leading-svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                  </svg>
+                  <span class="dropdown-label" id="topPartidosDropdownLabel">Partidos: <strong>Todos</strong></span>
+                  <svg class="dropdown-caret-svg" width="9" height="9" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div class="top-popover-panel top-popover-partidos" id="topPartidosPopover" style="display: none;"
+                  onclick="event.stopPropagation()">
+                  <div class="top-popover-header">
+                    <div class="top-popover-title">Filtrar por Partidos</div>
+                    <span class="top-popover-hint">1x prioriza • 2x oculta</span>
+                  </div>
+                  <div class="chips-grid" id="topPartidosChipsContainer" style="max-height: 240px; overflow-y: auto;">
+                    <!-- Preenchido dinamicamente via JS -->
+                  </div>
+                  <div class="top-popover-footer">
+                    <button type="button" class="btn-text-discreet" onclick="App.clearPartidosPreferences()">Limpar
+                      preferências</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mandato -->
+          <div class="top-filter-group top-group-mandato">
+            <div class="top-group-header">
+              <div class="top-group-title-wrap">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Mandato</span>
+              </div>
+            </div>
+            <div class="top-group-controls">
+              <div class="top-mandate-toggle-group">
+                <button type="button" class="btn-top-mandate" id="topBtnMandateReeleicao"
+                  onclick="App.setMandateFilter('reeleicao')" title="Disputando reeleição">Reeleição</button>
+                <button type="button" class="btn-top-mandate btn-mandate-stacked" id="topBtnMandateOutroCargo"
+                  onclick="App.setMandateFilter('outro_cargo')" title="Em exercício (outro cargo)">
+                  <span class="mandate-main-text">Em exercício</span>
+                  <span class="mandate-sub-text">(outros cargos)</span>
+                </button>
+                <button type="button" class="btn-top-mandate" id="topBtnMandateSemMandato"
+                  onclick="App.setMandateFilter('sem_mandato')" title="Sem mandato público no momento">Não
+                  consta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha 3: Características (demais filtros) -->
+        <div class="top-filter-row top-filter-row-3">
+          <div class="top-filter-group top-group-caracteristicas">
+            <div class="top-group-header">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Características:</span>
+            </div>
+            <div class="top-group-controls top-caracteristicas-controls">
+              <button type="button" class="btn-top-quick-filter" id="topBtnQuick_genero"
+                onclick="CardFilterManager.toggle(this, 'genero', event)" title="Filtrar por Gênero">
+                <span>Gênero</span>
+                <svg class="dropdown-caret-svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <button type="button" class="btn-top-quick-filter" id="topBtnQuick_raca"
+                onclick="CardFilterManager.toggle(this, 'raca', event)" title="Filtrar por Cor/Raça">
+                <span>Cor/Raça</span>
+                <svg class="dropdown-caret-svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <button type="button" class="btn-top-quick-filter" id="topBtnQuick_faixa_etaria"
+                onclick="CardFilterManager.toggle(this, 'faixa_etaria', event)" title="Filtrar por Faixa Etária">
+                <span>Faixa Etária</span>
+                <svg class="dropdown-caret-svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <button type="button" class="btn-top-quick-filter" id="topBtnQuick_profissao"
+                onclick="CardFilterManager.toggle(this, 'profissao', event)" title="Filtrar por Ocupação">
+                <span>Profissão</span>
+                <svg class="dropdown-caret-svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <button type="button" class="btn-top-quick-filter" id="topBtnQuick_instrucao"
+                onclick="CardFilterManager.toggle(this, 'instrucao', event)" title="Filtrar por Escolaridade">
+                <span>Escolaridade</span>
+                <svg class="dropdown-caret-svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <button type="button" class="btn-top-quick-filter" id="topBtnQuick_campanha"
+                onclick="CardFilterManager.toggle(this, 'campanha', event)"
+                title="Filtrar por Financiamento de Campanha">
+                <span>Campanha</span>
+                <svg class="dropdown-caret-svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <button type="button" class="btn-top-more-filters" id="topBtnMoreFilters"
+                onclick="App.openMoreFiltersModal()" title="Abrir painel com todos os filtros avançados">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="4" y1="21" x2="4" y2="14" />
+                  <line x1="4" y1="10" x2="4" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12" y2="3" />
+                  <line x1="20" y1="21" x2="20" y2="16" />
+                  <line x1="20" y1="12" x2="20" y2="3" />
+                  <line x1="1" y1="14" x2="7" y2="14" />
+                  <line x1="9" y1="8" x2="15" y2="8" />
+                  <line x1="17" y1="16" x2="23" y2="16" />
+                </svg>
+                <span>+ Filtros</span>
+                <span id="topMoreFiltersBadge" class="more-filters-badge" style="display: none;">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Barra Sticky de Filtros Selecionados (Acompanha a rolagem discretamente) -->
+      <div class="top-filter-chips-sticky-bar" id="topActiveChipsRow" style="display: none;">
+        <div class="top-filter-chips-inner">
+          <div class="top-inline-chips-list" id="topInlineActiveChips"></div>
+          <button type="button" class="btn-top-clear-all" id="btnTopClearAll" onclick="App.clearAllFilters()"
+            title="Limpar todos os filtros aplicados">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+            <span>Limpar filtros</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Linha Unificada de Controles: Busca + Ordenação + Modos de Visualização & Exportação -->
+      <div class="feed-unified-toolbar">
+        <div class="search-input-wrap">
+          <svg class="search-prefix-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="form-input search-main-input"
+            placeholder="Buscar candidato ou número..." oninput="App.onSearchInput(this.value)">
+          <button type="button" id="btnSearchClear" class="btn-search-clear" onclick="App.clearSearchInput()"
+            style="display: none;" aria-label="Limpar busca">✕</button>
+          <kbd class="search-kbd-tag">Ctrl + K</kbd>
+        </div>
+
+        <!-- Atalho + Filtros visível apenas no Modo com Filtros Laterais (Layout Clássico) -->
+        <button type="button" class="btn-classic-top-filters" id="btnClassicTopFilters"
+          onclick="App.openMoreFiltersModal()" title="Mais filtros de busca">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="21" x2="4" y2="14" />
+            <line x1="4" y1="10" x2="4" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12" y2="3" />
+            <line x1="20" y1="21" x2="20" y2="16" />
+            <line x1="20" y1="12" x2="20" y2="3" />
+            <line x1="1" y1="14" x2="7" y2="14" />
+            <line x1="9" y1="8" x2="15" y2="8" />
+            <line x1="17" y1="16" x2="23" y2="16" />
+          </svg>
+          <span>+ Filtros</span>
+          <span id="classicMoreFiltersBadge" class="more-filters-badge" style="display: none;">0</span>
+        </button>
+
+        <div class="feed-sort-select-wrap">
+          <label for="selectSortFeed" class="feed-sort-label">Ordenar por:</label>
+          <select id="selectSortFeed" class="feed-sort-select" onchange="App.setOrdenacao(this.value)">
+            <option value="receitas" selected>Maior Receita de Campanha</option>
+            <option value="nome">Nome (A-Z)</option>
+            <option value="numero">Número da Urna (1-9)</option>
+            <option value="cargo">Cargo / UF (A-Z)</option>
+            <option value="ideologia">Espectro (Esq → Dir)</option>
+            <option value="ideologia_desc">Espectro (Dir → Esq)</option>
+            <option value="gastos">Maior Gasto Declarado</option>
+            <option value="gastos_asc">Menor Gasto Declarado</option>
+            <option value="bens">Maior Patrimônio (Bens)</option>
+            <option value="bens_asc">Menor Patrimônio (Bens)</option>
+            <option value="mandato">Em Exercício Primeiro</option>
+          </select>
+        </div>
+
+        <div class="feed-view-export-wrap">
+          <div class="view-toggle-btns">
+            <button type="button" class="btn-view-toggle active" id="btnViewCards" onclick="App.setViewMode('cards')"
+              title="Visualização em Cards" aria-label="Visualização em Cards">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+              </svg>
+            </button>
+            <button type="button" class="btn-view-toggle" id="btnViewTable" onclick="App.setViewMode('table')"
+              title="Visualização em Tabela" aria-label="Visualização em Tabela">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Menu de Colunas Visíveis (para a Tabela) -->
+          <div class="col-dropdown-wrap" id="colDropdownWrap">
+            <button type="button" class="btn-header" onclick="App.toggleColDropdown(event)"
+              title="Selecionar quais colunas exibir na tabela">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+              </svg>
+              Colunas
+            </button>
+            <div class="col-dropdown-menu" id="colDropdownMenu" onclick="event.stopPropagation()">
+              <div
+                style="font-size: 0.68rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.25rem;">
+                Colunas Visíveis
+              </div>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_candidato" checked
+                  onchange="App.toggleColumn('candidato', this.checked)"> Candidato (Foto & Nome)</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_numero" checked
+                  onchange="App.toggleColumn('numero', this.checked)"> Número na Urna</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_partido" checked
+                  onchange="App.toggleColumn('partido', this.checked)"> Partido</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_cargo" checked
+                  onchange="App.toggleColumn('cargo', this.checked)"> Cargo</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_uf" checked
+                  onchange="App.toggleColumn('uf', this.checked)"> UF / Estado</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_ideologia" checked
+                  onchange="App.toggleColumn('ideologia', this.checked)"> Ideologia do partido</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_mandato" checked
+                  onchange="App.toggleColumn('mandato', this.checked)"> Mandato Atual</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_situacao"
+                  onchange="App.toggleColumn('situacao', this.checked)"> Situação no TSE (Apto/Deferido)</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_profissao" checked
+                  onchange="App.toggleColumn('profissao', this.checked)"> Profissão / Ocupação</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_raca" checked
+                  onchange="App.toggleColumn('raca', this.checked)"> Raça / Etnia</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_idade"
+                  onchange="App.toggleColumn('idade', this.checked)"> Idade / Nascimento</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_estado_civil"
+                  onchange="App.toggleColumn('estado_civil', this.checked)"> Estado Civil</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_prioridade_partido" checked
+                  onchange="App.toggleColumn('prioridade_partido', this.checked)"> Ranking no Partido</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_bens" checked
+                  onchange="App.toggleColumn('bens', this.checked)"> Bens Declarados (R$)</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_receitas" checked
+                  onchange="App.toggleColumn('receitas', this.checked)"> Receitas de Campanha (R$)</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_gastos" checked
+                  onchange="App.toggleColumn('gastos', this.checked)"> Gastos de Campanha (R$)</label>
+              <label class="col-check-item"><input type="checkbox" id="colCheck_acoes" checked
+                  onchange="App.toggleColumn('acoes', this.checked)"> Ações / Ficha</label>
+            </div>
+          </div>
+
+          <button type="button" class="btn-header btn-download-icon-only" onclick="App.openExportModal()"
+            title="Exportar dados da listagem (CSV / JSON)" aria-label="Exportar dados da listagem">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Container de Renderização dos Candidatos (Cards ou Tabela) -->
+      <div id="candidatesContainer"></div>
+
+      <!-- Paginação -->
+      <div class="pagination-wrapper" id="paginationWrapper"></div>
+
+    </main>
+  </div>
+
+  <!-- Drawer Lateral de Detalhes -->
+  <div class="drawer-overlay" id="detailsDrawer" onclick="if(event.target===this) App.closeDetails()">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div>
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase;">Ficha
+            do Candidato</span>
+          <h2 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary);" id="drawerCandName">Candidato
+          </h2>
+        </div>
+        <button type="button" class="close-x-btn" onclick="App.closeDetails()">✕</button>
+      </div>
+
+      <div class="drawer-body" id="drawerBody"></div>
+    </div>
+  </div>
+
+  <!-- Modal Unificado: Sobre o Projeto, Fontes Oficiais & Cidadania -->
+  <div class="modal-overlay" id="sobreModal" onclick="if(event.target===this) App.closeSobreModal()">
+    <div class="modal-dialog" style="max-width: 640px; width: 95vw;">
+      <div class="modal-header">
+        <div>
+          <span
+            style="font-size: 0.68rem; font-weight: 700; color: var(--accent-petroleo); text-transform: uppercase; letter-spacing: 0.05em;">Iniciativa
+            Independente, Gratuita e Livre de Anúncios</span>
+          <h2
+            style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-serif); color: var(--text-primary); margin-top: 0.15rem;">
+            Sobre o Em Quem Eu Voto</h2>
+        </div>
+        <button type="button" class="close-x-btn" onclick="App.closeSobreModal()">✕</button>
+      </div>
+
+      <div class="modal-body-scroll"
+        style="padding: 1.25rem; font-size: 0.82rem; line-height: 1.55; color: var(--text-secondary); max-height: 80vh; overflow-y: auto;">
+        <!-- Propósito e Visão Geral -->
+        <div
+          style="background: var(--bg-surface-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.95rem 1.1rem; margin-bottom: 1rem; border-left: 3px solid var(--accent-petroleo);">
+          <p style="margin: 0; color: var(--text-primary); font-size: 0.84rem; line-height: 1.55;">
+            O Em Quem Eu Voto ajuda o eleitor a pesquisar, comparar e organizar informações sobre candidatos para decidir seu voto com mais autonomia. Ampliado para 2026, o app oferece recursos práticos, como comparação direta, santinhos individuais e colinhas personalizáveis.
+          </p>
+        </div>
+
+        <!-- Botão de Ação: Tutorial Interativo & Apoie -->
+        <div
+          style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; background: rgba(8, 76, 97, 0.04); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1rem;">
+          <div style="flex: 1 1 260px; min-width: 0;">
+            <div style="font-weight: 700; font-size: 0.82rem; color: var(--text-primary); margin-bottom: 0.15rem;">
+              Primeira vez no app?</div>
+            <div style="font-size: 0.73rem; color: var(--text-secondary); line-height: 1.4;">Aprenda a explorar filtros,
+              quiz, comparador e colinha com nosso guia interativo.</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;">
+            <button type="button" class="btn-studio-primary" onclick="App.closeSobreModal(); TutorialTour.start();"
+              style="font-size: 0.75rem; padding: 0.38rem 0.75rem; white-space: nowrap;">
+              ▶ Abrir Tutorial
+            </button>
+            <button type="button" class="btn-header" onclick="App.closeSobreModal(); App.openApoieModal();"
+              style="font-size: 0.75rem; padding: 0.38rem 0.75rem; white-space: nowrap; color: var(--accent-coral, #C84B31); border-color: rgba(200, 75, 49, 0.3);">
+              ❤️ Apoie o Projeto
+            </button>
+          </div>
+        </div>
+
+        <!-- Fontes Oficiais de Dados -->
+        <div style="margin-bottom: 1rem;">
+          <div
+            style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem;">
+            Fontes Oficiais &amp; Metodologia
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <div
+              style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.55rem 0.75rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.15rem; flex-wrap: wrap; gap: 0.3rem;">
+                <strong style="color: var(--text-primary); font-size: 0.79rem;">Candidaturas, Dados Pessoais &amp;
+                  Bens</strong>
+                <span
+                  style="font-size: 0.66rem; font-weight: 700; background: var(--bg-surface-subtle); padding: 0.1rem 0.35rem; border-radius: 3px; border: 1px solid var(--border-color);">TSE
+                  / DivulgaCandContas</span>
+              </div>
+              <p style="margin: 0; font-size: 0.73rem; color: var(--text-muted); line-height: 1.35;">
+                Registros oficiais de candidaturas, números da urna, ocupação, certidões e patrimônio declarado ao
+                Tribunal Superior Eleitoral.
+              </p>
+            </div>
+
+            <div
+              style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.55rem 0.75rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.15rem; flex-wrap: wrap; gap: 0.3rem;">
+                <strong style="color: var(--text-primary); font-size: 0.79rem;">Financiamento, Receitas &amp;
+                  Gastos</strong>
+                <span
+                  style="font-size: 0.66rem; font-weight: 700; background: var(--bg-surface-subtle); padding: 0.1rem 0.35rem; border-radius: 3px; border: 1px solid var(--border-color);">Prestação
+                  de Contas TSE</span>
+              </div>
+              <p style="margin: 0; font-size: 0.73rem; color: var(--text-muted); line-height: 1.35;">
+                Repasses de Fundo Eleitoral, doações de pessoas físicas, despesas contratadas e rankings comparativos no
+                partido e no cargo.
+              </p>
+            </div>
+
+            <div
+              style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.55rem 0.75rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.15rem; flex-wrap: wrap; gap: 0.3rem;">
+                <strong style="color: var(--text-primary); font-size: 0.79rem;">Atuação Parlamentar, Votações &amp;
+                  Emendas</strong>
+                <div style="display: flex; gap: 0.25rem;">
+                  <span
+                    style="font-size: 0.65rem; font-weight: 700; background: var(--bg-surface-subtle); padding: 0.1rem 0.35rem; border-radius: 3px; border: 1px solid var(--border-color);">Câmara
+                    &amp; Radar</span>
+                  <span
+                    style="font-size: 0.65rem; font-weight: 700; background: var(--bg-surface-subtle); padding: 0.1rem 0.35rem; border-radius: 3px; border: 1px solid var(--border-color);">CGU
+                    / Transparência</span>
+                </div>
+              </div>
+              <p style="margin: 0; font-size: 0.73rem; color: var(--text-muted); line-height: 1.35;">
+                Votações nominais e proposições legislativas (Câmara dos Deputados), governismo e assiduidade na 57ª
+                Legislatura (Radar do Congresso • Congresso em Foco • Câmara e Senado) e emendas federais (CGU / Portal
+                da Transparência / SIAFI).
+              </p>
+            </div>
+
+            <div
+              style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.55rem 0.75rem;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.15rem; flex-wrap: wrap; gap: 0.3rem;">
+                <strong style="color: var(--text-primary); font-size: 0.79rem;">Espectro Político &amp; Bússola</strong>
+                <span
+                  style="font-size: 0.65rem; font-weight: 700; background: var(--bg-surface-subtle); padding: 0.1rem 0.35rem; border-radius: 3px; border: 1px solid var(--border-color);">BLS
+                  9, Bolognesi et al. &amp; GPS</span>
+              </div>
+              <p style="margin: 0; font-size: 0.73rem; color: var(--text-muted); line-height: 1.35;">
+                Classificação ideológica calibrada pelas pesquisas acadêmicas Brazilian Legislative Survey (Oxford/FGV),
+                Expert Survey de Bolognesi, Ribeiro &amp; Codato (Revista DADOS / ABCP) e GPS Partidário, distribuída na
+                escala de 1 a 7.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links Úteis -->
+        <div style="margin-bottom: 1rem;">
+          <div
+            style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.45rem;">
+            Links Úteis do Autor &amp; Projeto
+          </div>
+          <div class="apoie-links-grid">
+            <a href="https://linktr.ee/viniciuspinon" target="_blank" rel="noopener" class="apoie-link-item">
+              <span class="apoie-link-icon">🌐</span>
+              <div style="flex: 1; min-width: 0;">
+                <strong>Site Oficial &amp; Bio</strong>
+                <small>linktr.ee/viniciuspinon</small>
+              </div>
+              <span class="apoie-link-arrow">↗</span>
+            </a>
+            <a href="https://viniciuspinon.substack.com/" target="_blank" rel="noopener" class="apoie-link-item">
+              <span class="apoie-link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#FF6719">
+                  <path
+                    d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                </svg>
+              </span>
+              <div style="flex: 1; min-width: 0;">
+                <strong>Substack</strong>
+                <small>Artigos &amp; Análises</small>
+              </div>
+              <span class="apoie-link-arrow">↗</span>
+            </a>
+            <a href="https://github.com/viniciuspinon/emquemeuvoto" target="_blank" rel="noopener"
+              class="apoie-link-item">
+              <span class="apoie-link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </span>
+              <div style="flex: 1; min-width: 0;">
+                <strong>GitHub</strong>
+                <small>github.com/viniciuspinon</small>
+              </div>
+              <span class="apoie-link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Apoio Voluntário PIX -->
+        <div class="apoie-pix-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.55rem;">
+            <span
+              style="font-size: 0.74rem; font-weight: 700; color: var(--accent-petroleo); text-transform: uppercase;">Contribuição
+              Direta via PIX</span>
+            <span style="font-size: 0.68rem; color: var(--text-muted);">Qualquer valor fortalece o projeto</span>
+          </div>
+          <div class="pix-key-wrapper">
+            <input type="text" id="pixKeyInput" class="pix-key-input" value="emquemeuvoto2026@gmail.com" readonly>
+            <button type="button" class="btn-copy-pix" onclick="App.copyPixKey()" id="btnCopyPix">
+              Copiar Chave
+            </button>
+          </div>
+          <div id="pixCopyFeedback"
+            style="display: none; font-size: 0.72rem; color: var(--accent-emerald); font-weight: 600; margin-top: 0.4rem; text-align: center;">
+            ✓ Chave PIX copiada para a área de transferência!
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
+          <button type="button" class="btn-header" onclick="App.closeSobreModal()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Independente de Apoio ao Projeto (com QR Code) -->
+  <div class="modal-overlay" id="apoieModal" onclick="if(event.target===this) App.closeApoieModal()">
+    <div class="modal-dialog" style="max-width: 520px; width: 95vw;">
+      <div class="modal-header">
+        <div>
+          <span
+            style="font-size: 0.68rem; font-weight: 700; color: var(--accent-petroleo); text-transform: uppercase; letter-spacing: 0.05em;">Iniciativa
+            Cívica Independente</span>
+          <h2
+            style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-serif); color: var(--text-primary); margin-top: 0.15rem;">
+            Apoie o "Em Quem Eu Voto"</h2>
+        </div>
+        <button type="button" class="close-x-btn" onclick="App.closeApoieModal()">✕</button>
+      </div>
+
+      <div style="padding: 1.25rem; overflow-y: auto; max-height: calc(90vh - 80px);">
+        <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 1.1rem;">
+          O <strong>Em Quem Eu Voto</strong> é uma plataforma cívica 100% gratuita, sem anúncios, sem rastreadores e sem
+          vínculo partidário. Seu apoio voluntário viabiliza a manutenção dos servidores e a melhoria contínua dos
+          dados.
+        </p>
+
+        <!-- Seção PIX com QR Code -->
+        <div class="apoie-pix-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+            <span
+              style="font-size: 0.74rem; font-weight: 700; color: var(--accent-petroleo); text-transform: uppercase;">Contribuição
+              via PIX</span>
+            <span style="font-size: 0.68rem; color: var(--text-muted);">Qualquer valor fortalece o projeto</span>
+          </div>
+
+          <div
+            style="display: flex; flex-direction: column; align-items: center; gap: 0.65rem; background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 0.75rem;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=emquemeuvoto2026@gmail.com"
+              alt="QR Code PIX emquemeuvoto2026@gmail.com"
+              style="width: 150px; height: 150px; border-radius: var(--radius-xs); background: #FFFFFF; padding: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.12);">
+            <div style="font-size: 0.72rem; color: var(--text-secondary); text-align: center;">
+              Aponte a câmera no app do seu banco ou copie a chave abaixo:
+            </div>
+          </div>
+
+          <div class="pix-key-wrapper">
+            <input type="text" id="pixKeyInputApoie" class="pix-key-input" value="emquemeuvoto2026@gmail.com" readonly>
+            <button type="button" class="btn-copy-pix"
+              onclick="App.copyPixKey('pixKeyInputApoie', 'pixCopyFeedbackApoie')" id="btnCopyPixApoie">
+              Copiar Chave
+            </button>
+          </div>
+          <div id="pixCopyFeedbackApoie"
+            style="display: none; font-size: 0.72rem; color: var(--accent-emerald); font-weight: 600; margin-top: 0.4rem; text-align: center;">
+            ✓ Chave PIX copiada para a área de transferência!
+          </div>
+        </div>
+
+        <!-- Seção Links Úteis -->
+        <div style="margin-top: 1.15rem;">
+          <div
+            style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.45rem;">
+            Links do Autor &amp; Projeto
+          </div>
+          <div class="apoie-links-grid">
+            <a href="https://linktr.ee/viniciuspinon" target="_blank" rel="noopener" class="apoie-link-item">
+              <span class="apoie-link-icon">🌐</span>
+              <div style="flex: 1; min-width: 0;">
+                <strong>Site Oficial</strong>
+                <small>linktr.ee/viniciuspinon</small>
+              </div>
+              <span class="apoie-link-arrow">↗</span>
+            </a>
+            <a href="https://viniciuspinon.substack.com/" target="_blank" rel="noopener" class="apoie-link-item">
+              <span class="apoie-link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="#FF6719">
+                  <path
+                    d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                </svg>
+              </span>
+              <div style="flex: 1; min-width: 0;">
+                <strong>Substack</strong>
+                <small>Artigos e análises</small>
+              </div>
+              <span class="apoie-link-arrow">↗</span>
+            </a>
+            <a href="https://github.com/viniciuspinon" target="_blank" rel="noopener" class="apoie-link-item">
+              <span class="apoie-link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </span>
+              <div style="flex: 1; min-width: 0;">
+                <strong>GitHub</strong>
+                <small>github.com/viniciuspinon</small>
+              </div>
+              <span class="apoie-link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.2rem; display: flex; justify-content: flex-end;">
+          <button type="button" class="btn-header" onclick="App.closeApoieModal()">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Download da Lista (Exportação) -->
+  <div class="modal-overlay" id="exportModal" onclick="if(event.target===this) App.closeExportModal()">
+    <div class="modal-dialog" style="max-width: 520px;">
+      <div class="modal-header">
+        <div>
+          <span class="editorial-kicker" style="color: var(--accent-blue); margin-bottom: 0.2rem;">Exportar Dados
+            Eleitorais</span>
+          <h2 style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">
+            Baixar Lista de Candidatos</h2>
+        </div>
+        <button type="button" class="close-x-btn" onclick="App.closeExportModal()">✕</button>
+      </div>
+
+      <div class="export-modal-body">
+        <!-- Formato do Arquivo -->
+        <div class="export-section">
+          <label class="export-section-label">Formato do Arquivo:</label>
+          <div class="export-format-grid">
+            <label class="export-format-card active" id="expFmt_csv" onclick="App.setExportFormat('csv')">
+              <span class="export-format-icon">📄</span>
+              <strong class="export-format-ext">.CSV</strong>
+              <small class="export-format-desc">Universal / Excel</small>
+            </label>
+            <label class="export-format-card" id="expFmt_xls" onclick="App.setExportFormat('xls')">
+              <span class="export-format-icon">📊</span>
+              <strong class="export-format-ext">.XLS</strong>
+              <small class="export-format-desc">Planilha Excel</small>
+            </label>
+            <label class="export-format-card" id="expFmt_json" onclick="App.setExportFormat('json')">
+              <span class="export-format-icon">📦</span>
+              <strong class="export-format-ext">.JSON</strong>
+              <small class="export-format-desc">Dados / Devs</small>
+            </label>
+          </div>
+        </div>
+
+        <!-- Escopo dos Dados -->
+        <div class="export-section">
+          <label class="export-section-label">Quantidade de Registros:</label>
+          <div class="export-scope-row">
+            <label class="scope-radio-pill active" id="scope_page" onclick="App.setExportScope('page')">
+              <input type="radio" name="exportScope" value="page" checked style="display:none;">
+              <span>Página Atual (<span id="exportPageCount">30</span> cands.)</span>
+            </label>
+            <label class="scope-radio-pill" id="scope_all" onclick="App.setExportScope('all')">
+              <input type="radio" name="exportScope" value="all" style="display:none;">
+              <span>Todos os Filtrados (<span id="exportTotalCount">0</span> cands.)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Colunas a Incluir -->
+        <div class="export-section">
+          <div class="export-cols-header">
+            <label class="export-section-label" style="margin-bottom: 0;">Colunas para Exportar:</label>
+            <button type="button" class="export-toggle-all-btn" onclick="App.toggleAllExportCols()">
+              Marcar / Desmarcar Todas
+            </button>
+          </div>
+          <div class="export-columns-box">
+            <label class="col-check-item"><input type="checkbox" id="expCol_nome" checked> Nome na Urna</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_completo" checked> Nome Completo</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_numero" checked> Número</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_partido" checked> Partido</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_cargo" checked> Cargo</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_uf" checked> UF / Estado</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_ideologia" checked> Ideologia</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_mandato" checked> Mandato Atual</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_profissao" checked> Profissão /
+              Ocupação</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_estado_civil"> Estado Civil</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_bens" checked> Bens Declarados</label>
+            <label class="col-check-item"><input type="checkbox" id="expCol_gastos" checked> Gastos Campanha</label>
+          </div>
+        </div>
+
+        <div class="export-actions-footer">
+          <button type="button" class="btn-export-cancel" onclick="App.closeExportModal()">Cancelar</button>
+          <button type="button" class="btn-export-confirm" onclick="App.executarDownloadExportacao()">
+            📥 Baixar Arquivo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal do Santinho Studio (Personalização e Compartilhamento Social) -->
+  <div class="modal-overlay" id="santinhoModal" onclick="if(event.target===this) SantinhoStudio.close()">
+    <div class="modal-dialog" style="max-width: 980px; width: 95vw;">
+      <div class="modal-header">
+        <div>
+          <span
+            style="font-size: 0.7rem; font-weight: 700; color: var(--accent-claret); text-transform: uppercase;">Modelo
+            1 — Santinho (1 candidato)</span>
+          <h2 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary);" id="santinhoModalTitle">
+            Personalizar Santinho</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <button type="button" class="btn-header" id="santinhoBtnBackToSaved" onclick="SantinhoStudio.close()"
+            style="display: none; font-size: 0.74rem; padding: 0.35rem 0.65rem;" title="Voltar para a lista de Salvos">
+            ← Voltar aos Salvos
+          </button>
+          <button type="button" class="close-x-btn" onclick="SantinhoStudio.close()">✕</button>
+        </div>
+      </div>
+
+      <div style="padding: 1.25rem;" class="santinho-modal-content-grid">
+
+        <!-- Coluna Esquerda: Preview em Tempo Real -->
+        <div class="santinho-preview-col">
+          <div class="santinho-canvas-wrap" id="santinhoCanvasWrap">
+            <canvas id="santinhoCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Painel de Customização -->
+        <div class="santinho-controls-col">
+
+          <!-- Formato de Rede Social -->
+          <div class="santinho-ctrl-group">
+            <label class="form-label">Formato & Proporção da Rede:</label>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;">
+              <button type="button" class="btn-santinho-opt active" id="stFmt_vt"
+                onclick="SantinhoStudio.setFormat('9:16')">
+                <strong>9:16</strong>
+                <small>Stories / Celular</small>
+              </button>
+              <button type="button" class="btn-santinho-opt" id="stFmt_sq" onclick="SantinhoStudio.setFormat('1:1')">
+                <strong>1:1</strong>
+                <small>Feed (Insta/Face)</small>
+              </button>
+              <button type="button" class="btn-santinho-opt" id="stFmt_hz" onclick="SantinhoStudio.setFormat('16:9')">
+                <strong>16:9</strong>
+                <small>X (Twitter) / Post</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tema Visual & Fonte Lado a Lado -->
+          <div class="santinho-theme-font-row">
+            <!-- Tema Visual Editorial -->
+            <div class="santinho-ctrl-group" style="margin-bottom: 0;">
+              <label class="form-label">Tema:</label>
+              <div class="theme-swatch-bar">
+                <button type="button" class="btn-theme-swatch swatch-paper active" id="stTheme_paper"
+                  onclick="SantinhoStudio.setTheme('paper')" title="Edição Papel / Marfim"></button>
+                <button type="button" class="btn-theme-swatch swatch-slate" id="stTheme_slate"
+                  onclick="SantinhoStudio.setTheme('slate')" title="Noturno / Chumbo"></button>
+                <button type="button" class="btn-theme-swatch swatch-petroleum" id="stTheme_party"
+                  onclick="SantinhoStudio.setTheme('party')" title="Azul Petróleo Institucional"></button>
+                <button type="button" class="btn-theme-swatch swatch-claret" id="stTheme_claret"
+                  onclick="SantinhoStudio.setTheme('claret')" title="Terracota Nobre"></button>
+                <button type="button" class="btn-theme-swatch swatch-light" id="stTheme_light"
+                  onclick="SantinhoStudio.setTheme('light')" title="Branco Minimalista"></button>
+              </div>
+            </div>
+
+            <!-- Seleção de Fonte com Amostras "Aa" -->
+            <div class="santinho-ctrl-group" style="margin-bottom: 0;">
+              <label class="form-label">Tipografia:</label>
+              <div class="font-segment-bar">
+                <button type="button" class="btn-font-segment active" id="stFont_serif"
+                  onclick="SantinhoStudio.setFont('serif')" title="Serifada Editorial (DM Serif Display)">
+                  <span class="sample-aa" style="font-family: 'DM Serif Display', Georgia, serif;">Aa</span>
+                  <small>Serifada</small>
+                </button>
+                <button type="button" class="btn-font-segment" id="stFont_moderno"
+                  onclick="SantinhoStudio.setFont('moderno')" title="Sans Neutra (Plus Jakarta Sans)">
+                  <span class="sample-aa" style="font-family: 'Plus Jakarta Sans', sans-serif;">Aa</span>
+                  <small>Neutra</small>
+                </button>
+                <button type="button" class="btn-font-segment" id="stFont_mono" onclick="SantinhoStudio.setFont('mono')"
+                  title="Monospace Urna (JetBrains Mono)">
+                  <span class="sample-aa" style="font-family: 'JetBrains Mono', monospace;">Aa</span>
+                  <small>Mono</small>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elementos e Campos Customizáveis -->
+          <div class="santinho-ctrl-group">
+            <label class="form-label">Campos para Exibir:</label>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; background: var(--bg-page); padding: 0.6rem; border: 1px solid var(--border-color); border-radius: var(--radius-xs);">
+              <label class="col-check-item"><input type="checkbox" id="stOpt_ideologia" checked
+                  onchange="SantinhoStudio.update()"> Ideologia</label>
+              <label class="col-check-item"><input type="checkbox" id="stOpt_mandato" checked
+                  onchange="SantinhoStudio.update()"> Mandato Atual</label>
+              <label class="col-check-item"><input type="checkbox" id="stOpt_profissao" checked
+                  onchange="SantinhoStudio.update()"> Profissão / Ocupação</label>
+              <label class="col-check-item"><input type="checkbox" id="stOpt_bens" checked
+                  onchange="SantinhoStudio.update()"> Bens Declarados</label>
+              <label class="col-check-item"><input type="checkbox" id="stOpt_financas" checked
+                  onchange="SantinhoStudio.update()"> Financiamento</label>
+              <label class="col-check-item"><input type="checkbox" id="stOpt_frase" checked
+                  onchange="SantinhoStudio.update()"> Frase de Apoio</label>
+            </div>
+          </div>
+
+          <!-- Frase de Apoio Personalizada -->
+          <div class="santinho-ctrl-group">
+            <label class="form-label" for="stCustomPhrase">Frase de Apoio (opcional):</label>
+            <input type="text" id="stCustomPhrase" class="form-input"
+              value="Meu voto para transformar o Brasil em 2026!" oninput="SantinhoStudio.update()">
+          </div>
+
+          <!-- Botões de Ação -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.4rem; margin-top: 0.5rem;">
+            <button type="button" class="btn-studio-primary" onclick="SantinhoStudio.downloadPNG()">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Salvar
+            </button>
+            <button type="button" class="btn-studio-secondary" onclick="SantinhoStudio.downloadPDF()">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              PDF
+            </button>
+            <button type="button" class="btn-studio-secondary btn-copy-image-btn" onclick="SantinhoStudio.copyImage()"
+              title="Copiar imagem para a área de transferência (Ctrl+C)" style="padding: 0.65rem 0.75rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Barra de Compartilhamento Social Direto -->
+          <div class="share-actions-bar" style="margin-top: 0.25rem;">
+            <span class="share-actions-label">Compartilhar:</span>
+            <button type="button" class="btn-share-social wa" onclick="SantinhoStudio.share('whatsapp')"
+              title="Compartilhar no WhatsApp">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.03 2.6.12.17 1.77 2.7 4.28 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z" />
+              </svg>
+            </button>
+            <button type="button" class="btn-share-social ig" onclick="SantinhoStudio.share('instagram')"
+              title="Compartilhar no Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </button>
+            <button type="button" class="btn-share-social tw" onclick="SantinhoStudio.share('twitter')"
+              title="Compartilhar no X">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </button>
+            <button type="button" class="btn-share-social fb" onclick="SantinhoStudio.share('facebook')"
+              title="Compartilhar no Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal do Quiz de Afinidade -->
+  <div class="modal-overlay" id="quizModal" onclick="if(event.target===this) QuizController.close()">
+    <div class="modal-dialog" style="max-width: 620px; width: 95vw;">
+      <div class="modal-header">
+        <div>
+          <span
+            style="font-size: 0.7rem; font-weight: 700; color: var(--accent-petroleum); text-transform: uppercase; letter-spacing: 0.05em;">Quiz
+            de Afinidade</span>
+          <h2
+            style="font-size: 1.15rem; font-weight: 800; font-family: var(--font-serif); color: var(--text-primary); margin-top: 0.15rem;">
+            Bússola Ideológica 2026</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <button type="button" class="btn-quiz-help-icon" id="btnQuizMetodologiaHelp"
+            onclick="App.toggleQuizMetodologiaInfo()" title="Como calculamos a afinidade partidária?">?</button>
+          <button type="button" class="close-x-btn" onclick="QuizController.close()">✕</button>
+        </div>
+      </div>
+
+      <!-- Painel Desdobrável de Metodologia do Quiz -->
+      <div id="quizMetodologiaCard" class="quiz-metodologia-panel" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <strong
+            style="font-size: 0.76rem; color: var(--accent-petroleo); text-transform: uppercase; letter-spacing: 0.04em;">Metodologia
+            do Quiz</strong>
+          <button type="button" class="btn-text-discreet" onclick="App.toggleQuizMetodologiaInfo()"
+            style="font-size: 0.7rem;">Fechar ✕</button>
+        </div>
+        <p style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.45; margin: 0 0 0.5rem 0;">
+          A Bússola calcula sua afinidade comparando suas 7 respostas com a mediana das posições legislativas dos
+          partidos na pesquisa acadêmica <strong>BLS 9 (Brazilian Legislative Survey / Oxford-FGV)</strong> e no
+          <strong>GPS Partidário</strong>. Não há respostas certas ou erradas; o índice mede a proximidade euclidiana de
+          suas prioridades com cada bancada.
+        </p>
+        <div style="display: flex; justify-content: flex-end; margin-top: 0.4rem;">
+          <a href="/docs/relatorio_metodologia_quiz_2026.pdf" download="relatorio_metodologia_quiz_2026.pdf" class="btn-header"
+            style="font-size: 0.72rem; padding: 0.3rem 0.65rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-petroleum); border-color: var(--border-color);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Baixar Relatório da Metodologia (PDF)
+          </a>
+        </div>
+      </div>
+
+      <div class="quiz-progress-bar" style="height: 4px; background: var(--border-color);" id="quizProgressBarWrap">
+        <div class="quiz-progress-fill" id="quizProgressFill"
+          style="height: 100%; background: var(--accent-petroleum); width: 14%;"></div>
+      </div>
+
+      <div class="quiz-body">
+        <!-- Visão 1: Questionário (Perguntas) -->
+        <div id="quizQuestionView">
+          <div
+            style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.1rem; margin-bottom: 1.25rem;">
+            <div style="margin-bottom: 0.4rem;">
+              <span
+                style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-petroleum);"
+                id="quizDimTag">Dimensão</span>
+            </div>
+            <div style="font-size: 1.02rem; font-weight: 700; line-height: 1.45; color: var(--text-primary);"
+              id="quizStatement">Pergunta...</div>
+          </div>
+
+          <div style="margin: 1.25rem 0;">
+            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.5rem; text-align: center;">
+              Selecione seu grau de concordância de 1 a 7:
+            </div>
+            <div class="likert-buttons" id="quizLikertButtons" style="display: flex; gap: 0.45rem;"></div>
+            <div
+              style="display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 600; color: var(--text-muted); margin-top: 0.55rem;">
+              <span id="quizPoleLeft" style="color: var(--accent-coral, #C84B31);">1 - Discordo Totalmente</span>
+              <span style="color: var(--text-muted);">4 - Neutro</span>
+              <span id="quizPoleRight" style="color: var(--accent-petroleum, #005B68);">7 - Concordo Totalmente</span>
+            </div>
+          </div>
+
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.1rem; border-top: 1px solid var(--border-color); margin-top: 1.5rem;">
+            <button type="button" class="btn-header" id="quizBtnPrev" onclick="QuizController.prevQuestion()">
+              ← Anterior
+            </button>
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);"
+              id="quizStepIndicator">Pergunta 1 de 7</span>
+            <button type="button" class="btn-header primary" id="quizBtnNext" onclick="QuizController.nextQuestion()">
+              Próxima →
+            </button>
+          </div>
+        </div>
+
+        <!-- Visão 2: Resultado Pós-Quiz -->
+        <div id="quizResultView" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Colinha / Santinho da Colinha Studio -->
+  <div class="modal-overlay" id="savedListModal"
+    onclick="if(event.target===this) document.getElementById('savedListModal').classList.remove('open')">
+    <div class="modal-dialog" style="max-width: 960px; width: 95vw;">
+      <div class="modal-header">
+        <div>
+          <span
+            style="font-size: 0.7rem; font-weight: 700; color: var(--accent-claret); text-transform: uppercase;">Minhas
+            listas &amp; colinha</span>
+          <h2 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary);" id="savedListModalTitle">
+            Candidatos Salvos</h2>
+        </div>
+        <button type="button" class="close-x-btn"
+          onclick="document.getElementById('savedListModal').classList.remove('open')">✕</button>
+      </div>
+
+      <div class="modal-body-scroll">
+        <!-- Alternador de Modo: Gerenciar Lista / Personalizar Santinho -->
+        <div class="colinha-mode-toggle">
+          <button type="button" class="colinha-mode-btn active" id="btnColMode_list"
+            onclick="ListManager.switchView('list')">
+            📋 Minha Coleção de Salvos
+          </button>
+          <button type="button" class="colinha-mode-btn" id="btnColMode_studio"
+            onclick="ListManager.switchView('studio')">
+            🗳️ Minha Colinha
+          </button>
+        </div>
+
+        <!-- Visão 1: Gerenciamento da Lista -->
+        <div id="colinhaListView">
+          <div id="savedItemsList" style="margin-bottom: 1.25rem;"></div>
+
+          <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+            <button type="button" class="btn-header primary" onclick="ListManager.switchView('studio')">
+              🎨 Personalizar Colinha →
+            </button>
+            <button type="button" class="btn-header"
+              onclick="document.getElementById('savedListModal').classList.remove('open')">
+              Fechar
+            </button>
+          </div>
+        </div>
+
+        <!-- Visão 2: Estúdio da Colinha -->
+        <div id="colinhaStudioView" style="display: none;" class="santinho-modal-content-grid">
+
+          <!-- Coluna Esquerda: Preview da Colinha -->
+          <div class="santinho-preview-col">
+            <div class="santinho-canvas-wrap">
+              <canvas id="colinhaCanvas"></canvas>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Controles da Colinha -->
+          <div class="santinho-controls-col">
+
+            <!-- Título da Colinha -->
+            <div class="santinho-ctrl-group">
+              <label class="form-label" for="colTitleInput">Título / Nome da Colinha:</label>
+              <input type="text" id="colTitleInput" class="form-input" value="Colinha 2026"
+                oninput="ColinhaStudio.update()">
+            </div>
+
+            <!-- Formato / Proporção -->
+            <div class="santinho-ctrl-group">
+              <label class="form-label">Formato & Proporção da Rede:</label>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;">
+                <button type="button" class="btn-santinho-opt active" id="colFmt_vt"
+                  onclick="ColinhaStudio.setFormat('9:16')">
+                  <strong>9:16</strong>
+                  <small>Stories / Celular</small>
+                </button>
+                <button type="button" class="btn-santinho-opt" id="colFmt_sq" onclick="ColinhaStudio.setFormat('1:1')">
+                  <strong>1:1</strong>
+                  <small>Feed (Insta/Face)</small>
+                </button>
+                <button type="button" class="btn-santinho-opt" id="colFmt_hz" onclick="ColinhaStudio.setFormat('16:9')">
+                  <strong>16:9</strong>
+                  <small>X (Twitter) / Post</small>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tema Visual & Fonte Lado a Lado -->
+            <div class="santinho-theme-font-row">
+              <!-- Tema Visual Editorial -->
+              <div class="santinho-ctrl-group" style="margin-bottom: 0;">
+                <label class="form-label">Tema:</label>
+                <div class="theme-swatch-bar">
+                  <button type="button" class="btn-theme-swatch swatch-paper active" id="colTheme_paper"
+                    onclick="ColinhaStudio.setTheme('paper')" title="Edição Papel / Marfim"></button>
+                  <button type="button" class="btn-theme-swatch swatch-slate" id="colTheme_slate"
+                    onclick="ColinhaStudio.setTheme('slate')" title="Noturno / Chumbo"></button>
+                  <button type="button" class="btn-theme-swatch swatch-petroleum" id="colTheme_party"
+                    onclick="ColinhaStudio.setTheme('party')" title="Azul Petróleo Institucional"></button>
+                  <button type="button" class="btn-theme-swatch swatch-claret" id="colTheme_claret"
+                    onclick="ColinhaStudio.setTheme('claret')" title="Terracota Nobre"></button>
+                  <button type="button" class="btn-theme-swatch swatch-light" id="colTheme_light"
+                    onclick="ColinhaStudio.setTheme('light')" title="Branco Minimalista"></button>
+                </div>
+              </div>
+
+              <!-- Seleção de Fonte com Amostras "Aa" -->
+              <div class="santinho-ctrl-group" style="margin-bottom: 0;">
+                <label class="form-label">Tipografia:</label>
+                <div class="font-segment-bar">
+                  <button type="button" class="btn-font-segment active" id="colFont_serif"
+                    onclick="ColinhaStudio.setFont('serif')" title="Serifada Editorial (DM Serif Display)">
+                    <span class="sample-aa" style="font-family: 'DM Serif Display', Georgia, serif;">Aa</span>
+                    <small>Serifada</small>
+                  </button>
+                  <button type="button" class="btn-font-segment" id="colFont_moderno"
+                    onclick="ColinhaStudio.setFont('moderno')" title="Sans Neutra (Plus Jakarta Sans)">
+                    <span class="sample-aa" style="font-family: 'Plus Jakarta Sans', sans-serif;">Aa</span>
+                    <small>Neutra</small>
+                  </button>
+                  <button type="button" class="btn-font-segment" id="colFont_mono"
+                    onclick="ColinhaStudio.setFont('mono')" title="Monospace Urna (JetBrains Mono)">
+                    <span class="sample-aa" style="font-family: 'JetBrains Mono', monospace;">Aa</span>
+                    <small>Mono</small>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frase da Colinha -->
+            <div class="santinho-ctrl-group">
+              <label class="form-label" for="colPhraseInput">Minha Frase (opcional):</label>
+              <input type="text" id="colPhraseInput" class="form-input" maxlength="140"
+                placeholder="Ex: Meu voto consciente para transformar o Brasil!"
+                value="Meu voto consciente para transformar o Brasil!" oninput="ColinhaStudio.update()">
+            </div>
+
+            <!-- Opção de Espectro Político / Ideologia -->
+            <div class="santinho-ctrl-group" style="margin-top: 0.35rem;">
+              <label class="col-check-item"
+                style="font-size: 0.74rem; cursor: pointer; display: flex; align-items: center; gap: 0.45rem;">
+                <input type="checkbox" id="colOpt_ideologia" checked onchange="ColinhaStudio.update()">
+                <span>Mostrar ideologia do partido</span>
+              </label>
+            </div>
+
+            <!-- Botões de Ação: Voltar (seta) + Salvar Colinha + Baixar em PDF + Copiar Imagem -->
+            <div style="display: grid; grid-template-columns: auto 1fr 1fr auto; gap: 0.4rem; margin-top: 0.5rem;">
+              <button type="button" class="btn-studio-secondary" onclick="ListManager.switchView('list')"
+                title="Voltar para o gerenciador da lista"
+                style="padding: 0.6rem 0.85rem; font-size: 1.15rem; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center;">
+                ←
+              </button>
+              <button type="button" class="btn-studio-primary" onclick="ColinhaStudio.downloadPNG()">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Salvar
+              </button>
+              <button type="button" class="btn-studio-secondary" onclick="ColinhaStudio.downloadPDF()">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                PDF
+              </button>
+              <button type="button" class="btn-studio-secondary btn-copy-image-btn" onclick="ColinhaStudio.copyImage()"
+                title="Copiar imagem para a área de transferência (Ctrl+C)" style="padding: 0.65rem 0.75rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Barra de Compartilhamento Social Direto -->
+            <div class="share-actions-bar" style="margin-top: 0.25rem;">
+              <span class="share-actions-label">Compartilhar:</span>
+              <button type="button" class="btn-share-social wa" onclick="ColinhaStudio.share('whatsapp')"
+                title="Compartilhar no WhatsApp">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.03 2.6.12.17 1.77 2.7 4.28 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z" />
+                </svg>
+              </button>
+              <button type="button" class="btn-share-social ig" onclick="ColinhaStudio.share('instagram')"
+                title="Compartilhar no Instagram">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </button>
+              <button type="button" class="btn-share-social tw" onclick="ColinhaStudio.share('twitter')"
+                title="Compartilhar no X">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </button>
+              <button type="button" class="btn-share-social fb" onclick="ColinhaStudio.share('facebook')"
+                title="Compartilhar no Facebook">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Comparação Lado a Lado -->
+  <div class="modal-overlay" id="compareModal" onclick="if(event.target===this) CompareController.closeModal()">
+    <div class="modal-dialog"
+      style="max-width: 1060px; width: 95vw; max-height: 90vh; display: flex; flex-direction: column;">
+      <div class="modal-header">
+        <div>
+          <span
+            style="font-size: 0.7rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase;">Comparador</span>
+          <h2 style="font-size: 1.05rem; font-weight: 800; color: var(--text-primary);">Comparação de candidatos</h2>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <button type="button" class="btn-header" id="compareBtnBackToSaved" onclick="CompareController.closeModal()"
+            style="display: none; font-size: 0.74rem; padding: 0.35rem 0.65rem;" title="Voltar para a lista de Salvos">
+            ← Voltar aos Salvos
+          </button>
+          <button type="button" class="btn-header primary" onclick="CompareController.exportImage()"
+            style="font-size: 0.75rem; padding: 0.35rem 0.7rem; display: inline-flex; align-items: center; gap: 0.35rem;"
+            title="Salvar imagem do comparativo">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <path d="M21 15l-5-5L5 21" />
+            </svg>
+            <span>Salvar</span>
+          </button>
+          <button type="button" class="btn-header" onclick="CompareController.copyImage()"
+            style="font-size: 0.75rem; padding: 0.35rem 0.55rem; display: inline-flex; align-items: center; gap: 0.35rem;"
+            title="Copiar imagem para a área de transferência (Ctrl+C)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+            </svg>
+            <span>Copiar</span>
+          </button>
+          <button type="button" class="close-x-btn" onclick="CompareController.closeModal()">✕</button>
+        </div>
+      </div>
+
+      <!-- Barra de Compartilhamento Social Direto no Comparador -->
+      <div class="share-actions-bar" style="margin: 0.5rem 1.25rem 0; border-radius: var(--radius-xs);">
+        <span class="share-actions-label">Compartilhar:</span>
+        <button type="button" class="btn-share-social wa" onclick="CompareController.share('whatsapp')"
+          title="Compartilhar no WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.03 2.6.12.17 1.77 2.7 4.28 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z" />
+          </svg>
+        </button>
+        <button type="button" class="btn-share-social ig" onclick="CompareController.share('instagram')"
+          title="Compartilhar no Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </button>
+        <button type="button" class="btn-share-social tw" onclick="CompareController.share('twitter')"
+          title="Compartilhar no X">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </button>
+        <button type="button" class="btn-share-social fb" onclick="CompareController.share('facebook')"
+          title="Compartilhar no Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+        </button>
+      </div>
+
+      <div style="padding: 1.25rem; overflow-y: auto; overflow-x: auto; flex: 1;">
+        <!-- Barra de Customização de Atributos do Comparador -->
+        <div class="compare-toolbar" id="compareToolbar"
+          style="margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+            ⚙️ Personalizar Dados Exibidos:
+          </div>
+          <div class="compare-fields-pills" id="compareFieldsPills"
+            style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+        </div>
+
+        <div id="compareGridContainer"
+          style="display: flex; gap: 1rem; flex-wrap: nowrap; min-width: min-content; align-items: stretch;"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal Interativo do Mapa do Brasil (Full SVG) -->
+  <div class="modal-overlay" id="brazilMapModal" onclick="if(event.target===this) App.closeMapModal()">
+    <div class="modal-dialog" style="max-width: 780px; width: 95vw;">
+      <div class="modal-header" style="padding: 0.75rem 1rem;">
+        <div>
+          <span
+            style="font-size: 0.68rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase;">Geografia
+            Eleitoral 2026</span>
+          <h2 style="font-size: 1rem; font-weight: 800; color: var(--text-primary);">🗺️ Selecionar Estado no Mapa</h2>
+        </div>
+        <button type="button" class="close-x-btn" onclick="App.closeMapModal()">✕</button>
+      </div>
+
+      <div class="modal-body-scroll" style="padding: 0.85rem;">
+        <div class="brazil-modal-split-layout">
+          <!-- Coluna Esquerda: Mapa Interativo Clicável do Brasil -->
+          <div class="brazil-split-left">
+            <div class="brazil-svg-map-container" id="brazilSvgMapContainer">
+              <!-- Renderizado dinamicamente com SVG interativo dos 27 estados -->
+            </div>
+            <div style="font-size: 0.68rem; color: var(--text-muted); text-align: center; margin-top: 0.25rem;">
+              Toque no estado ou passe o mouse para explorar
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Filtros Regionais + Lista Enxuta de Estados -->
+          <div class="brazil-split-right">
+            <!-- Botão Geral e Regiões -->
+            <div class="map-regions-bar">
+              <button type="button" class="btn-map-region active" id="btnMapRegion_BR" onclick="App.toggleMapUf('BR')"
+                title="Ver todo o Brasil">
+                🇧🇷 Brasil (Todos)
+              </button>
+              <button type="button" class="btn-map-region" id="btnMapRegion_SE"
+                onclick="App.filterMapRegion('SE')">Sudeste</button>
+              <button type="button" class="btn-map-region" id="btnMapRegion_S"
+                onclick="App.filterMapRegion('S')">Sul</button>
+              <button type="button" class="btn-map-region" id="btnMapRegion_NE"
+                onclick="App.filterMapRegion('NE')">Nordeste</button>
+              <button type="button" class="btn-map-region" id="btnMapRegion_CO"
+                onclick="App.filterMapRegion('CO')">C-Oeste</button>
+              <button type="button" class="btn-map-region" id="btnMapRegion_N"
+                onclick="App.filterMapRegion('N')">Norte</button>
+            </div>
+
+            <!-- Grade Compacta de Chips de Estados -->
+            <div class="brazil-states-compact-list" id="brazilStatesGrid">
+              <!-- Renderizado dinamicamente via JS -->
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 0.5rem; gap: 0.5rem; flex-wrap: wrap;">
+          <div id="mapSelectedStatus"
+            style="font-size: 0.75rem; color: var(--accent-blue); font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span>📍</span> <span>Exibindo: <strong>Todo o Brasil (BR)</strong></span>
+          </div>
+          <div style="display: flex; gap: 0.45rem;">
+            <button type="button" class="btn-header" onclick="App.toggleMapUf('BR')"
+              style="font-size: 0.75rem; padding: 0.35rem 0.65rem;">
+              Limpar / Brasil
+            </button>
+            <button type="button" class="btn-header primary" onclick="App.closeMapModal()"
+              style="font-size: 0.75rem; padding: 0.35rem 0.85rem;">
+              ✓ Concluir / Ver Candidatos
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backdrop para Popovers e Bottom Sheets no Mobile -->
+  <div class="popover-backdrop" id="popoverBackdrop" onclick="CardFilterManager.close(); TableFilterManager.close();">
+  </div>
+
+  <!-- Popover Avançado de Filtros da Tabela -->
+  <div id="tableFilterPopover" class="table-filter-popover" style="display: none;" onclick="event.stopPropagation()">
+    <div class="popover-header">
+      <span id="popoverTitle" class="popover-title">Filtrar Coluna</span>
+      <button type="button" class="popover-close-btn" onclick="TableFilterManager.close()">✕</button>
+    </div>
+
+    <div class="popover-body" id="popoverBody">
+      <!-- Conteúdo Dinâmico (Busca + Checkboxes ou Range Slicer) -->
+    </div>
+
+    <div class="popover-footer">
+      <button type="button" class="btn-popover-clear" onclick="TableFilterManager.clearCurrent()">Limpar</button>
+      <button type="button" class="btn-popover-apply" onclick="TableFilterManager.applyCurrent()">Aplicar</button>
+    </div>
+  </div>
+
+  <!-- Popover Intuitivo de Filtros Rápidos dos Cards (Voter-Friendly) -->
+  <div class="card-filter-popover" id="cardFilterPopover" style="display: none;" onclick="event.stopPropagation()">
+    <div class="card-filter-header">
+      <span id="cardFilterTitle">Filtrar</span>
+      <button type="button" class="close-x-btn-sm" onclick="CardFilterManager.close()">✕</button>
+    </div>
+    <div class="card-filter-options" id="cardFilterOptions"></div>
+  </div>
+
+  <!-- Modal Completo de Mais Filtros Avançados -->
+  <div class="modal-overlay" id="moreFiltersModal" onclick="if(event.target===this) App.closeMoreFiltersModal()">
+    <div class="modal-dialog" style="max-width: 650px; max-height: 90vh; display: flex; flex-direction: column;">
+      <div class="modal-header" style="flex-shrink: 0;">
+        <div>
+          <span
+            style="font-size: 0.7rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase;">Filtros
+            Avançados</span>
+          <h2 style="font-size: 1.15rem; font-weight: 800; color: var(--text-primary);">Refinar Busca de Candidatos</h2>
+        </div>
+        <button type="button" class="close-x-btn" onclick="App.closeMoreFiltersModal()">✕</button>
+      </div>
+
+      <div class="modal-body" id="moreFiltersBody"
+        style="overflow-y: auto; flex: 1; padding: 1.15rem; display: flex; flex-direction: column; gap: 1rem;">
+
+        <!-- Bloco 1: Localização & Cargo -->
+        <div class="filter-modal-section">
+          <div class="filter-modal-section-title">
+            <span>📍</span> Localização &amp; Cargo
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+            <div class="filter-modal-field">
+              <label class="filter-modal-label">Estado / Âmbito:</label>
+              <select id="modalSelectUf" class="form-select" style="font-size: 0.78rem; background: var(--bg-page);"
+                onchange="App.onModalUfChange(this.value)">
+                <!-- Preenchido dinamicamente com UFs -->
+              </select>
+            </div>
+            <div class="filter-modal-field">
+              <label class="filter-modal-label">Município (se aplicável):</label>
+              <input type="text" id="modalInputMunicipio" class="form-input" placeholder="Todos os municípios..."
+                style="font-size: 0.78rem; padding: 0.38rem 0.55rem; background: var(--bg-page);">
+            </div>
+          </div>
+          <div class="filter-modal-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+              <label class="filter-modal-label" style="margin-bottom: 0;">Cargos Pretendidos:</label>
+              <button type="button" class="btn-text-discreet" onclick="App.clearModalCargos()">Todos os Cargos</button>
+            </div>
+            <div class="filter-chips-grid" id="modalCargosContainer">
+              <!-- Preenchido dinamicamente via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 2: Ideologia & Partidos -->
+        <div class="filter-modal-section">
+          <div class="filter-modal-section-title">
+            <span>🧭</span> Ideologia &amp; Partidos
+          </div>
+          <div class="filter-modal-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+              <label class="filter-modal-label" style="margin-bottom: 0;">Espectro Político (Bússola):</label>
+              <button type="button" class="btn-text-discreet" id="modalBtnIdeoTodos"
+                onclick="App.setModalIdeologyRange(1, 7)">Ver Todos</button>
+            </div>
+            <div id="modalIdeologiaCurrentLabel"
+              style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem;">
+              Todos os espectros
+            </div>
+            <!-- Slider Duplo no Modal -->
+            <div class="ideologia-slider-wrapper" style="margin-bottom: 0.55rem;">
+              <div class="ideologia-track-gradient"></div>
+              <div class="ideologia-track-highlight" id="modalIdeologiaTrackHighlight"></div>
+              <input type="range" class="ideologia-range-input ideo-min-thumb" id="modalIdeologiaMinSlider" min="1"
+                max="7" step="1" value="1" oninput="App.onModalIdeologySliderInput('min', this.value)">
+              <input type="range" class="ideologia-range-input ideo-max-thumb" id="modalIdeologiaMaxSlider" min="1"
+                max="7" step="1" value="7" oninput="App.onModalIdeologySliderInput('max', this.value)">
+            </div>
+            <div class="ideologia-quick-segments" style="margin-top: 0;">
+              <button type="button" class="btn-ideo-segment" id="modalBtnIdeoEsq"
+                onclick="App.setModalIdeologyRange(1, 3)">Esquerda</button>
+              <button type="button" class="btn-ideo-segment" id="modalBtnIdeoCentro"
+                onclick="App.setModalIdeologyRange(3, 5)">Centro</button>
+              <button type="button" class="btn-ideo-segment" id="modalBtnIdeoDir"
+                onclick="App.setModalIdeologyRange(5, 7)">Direita</button>
+            </div>
+          </div>
+          <div class="filter-modal-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+              <label class="filter-modal-label" style="margin-bottom: 0;">Partidos:</label>
+              <span style="font-size: 0.65rem; color: var(--text-muted);">Clique 1x priorizar | 2x ocultar</span>
+            </div>
+            <div class="chips-grid" id="modalPartidosChipsContainer" style="max-height: 100px; overflow-y: auto;">
+              <!-- Preenchido dinamicamente via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 3: Situação Jurídica & Mandato -->
+        <div class="filter-modal-section">
+          <div class="filter-modal-section-title">
+            <span>🏛️</span> Situação Jurídica &amp; Mandato
+          </div>
+
+          <!-- Situação da Candidatura -->
+          <div class="filter-modal-field">
+            <label class="filter-modal-label">Situação do Registro no TSE:</label>
+            <div class="filter-chips-grid" id="modalFilterSituacao">
+              <button type="button" class="filter-modal-chip active" data-group="situacao"
+                data-val="DEFERIDOS_AGUARDANDO" onclick="App.toggleModalChip(this)">
+                ✓ Deferidos e Aguardando (Padrão)
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="situacao" data-val="APTO"
+                onclick="App.toggleModalChip(this)">
+                Apenas Deferidos / Aptos
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="situacao" data-val="AGUARDANDO"
+                onclick="App.toggleModalChip(this)">
+                ⏳ Aguardando julgamento
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="situacao" data-val="INAPTO"
+                onclick="App.toggleModalChip(this)">
+                ✕ Inaptos / Indeferidos
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="situacao" data-val="todos"
+                onclick="App.toggleModalChip(this)">
+                Todos os Registrados
+              </button>
+            </div>
+          </div>
+
+          <!-- Mandato Atual -->
+          <div class="filter-modal-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+              <label class="filter-modal-label" style="margin-bottom: 0;">Mandato Atual:</label>
+              <button type="button" class="btn-text-discreet" id="modalBtnMandateTodos"
+                onclick="App.setModalMandate('todos')">Ver Todos</button>
+            </div>
+            <div class="filter-chips-grid">
+              <button type="button" class="filter-modal-chip" data-group="mandato" data-val="reeleicao"
+                onclick="App.toggleModalChip(this)">
+                ⚡ Reeleição
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="mandato" data-val="outro_cargo"
+                onclick="App.toggleModalChip(this)">
+                <span>Em exercício</span>
+                <span style="font-size: 0.65rem; display: block; opacity: 0.8; margin-top: 1px;">(sem cargo)</span>
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="mandato" data-val="sem_mandato"
+                onclick="App.toggleModalChip(this)">
+                Não consta
+              </button>
+            </div>
+          </div>
+
+          <!-- Plano de Governo -->
+          <div class="filter-modal-field">
+            <label class="filter-modal-label">Plano de Governo / Propostas:</label>
+            <div class="filter-chips-grid" id="modalFilterProposta">
+              <button type="button" class="filter-modal-chip" data-group="proposta" data-val="true"
+                onclick="App.toggleModalChip(this)">
+                Apenas com Plano de Governo / Proposta Registrada
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 4: Perfil Demográfico & Pessoal -->
+        <div class="filter-modal-section">
+          <div class="filter-modal-section-title">
+            <span>👤</span> Perfil Demográfico &amp; Pessoal
+          </div>
+
+          <!-- Gênero -->
+          <div class="filter-modal-field">
+            <label class="filter-modal-label">Gênero:</label>
+            <div class="filter-chips-grid" id="modalFilterGenero">
+              <button type="button" class="filter-modal-chip" data-group="genero" data-val="FEMININO"
+                onclick="App.toggleModalChip(this)">
+                Mulheres
+              </button>
+              <button type="button" class="filter-modal-chip" data-group="genero" data-val="MASCULINO"
+                onclick="App.toggleModalChip(this)">
+                Homens
+              </button>
+            </div>
+          </div>
+
+          <!-- Cor / Raça -->
+          <div class="filter-modal-field">
+            <label class="filter-modal-label">Cor / Raça:</label>
+            <div class="filter-chips-grid" id="modalFilterRaca">
+              <button type="button" class="filter-modal-chip" data-group="raca" data-val="BRANCA"
+                onclick="App.toggleModalChip(this)">Branca</button>
+              <button type="button" class="filter-modal-chip" data-group="raca" data-val="PARDA"
+                onclick="App.toggleModalChip(this)">Parda</button>
+              <button type="button" class="filter-modal-chip" data-group="raca" data-val="PRETA"
+                onclick="App.toggleModalChip(this)">Preta</button>
+              <button type="button" class="filter-modal-chip" data-group="raca" data-val="INDÍGENA"
+                onclick="App.toggleModalChip(this)">Indígena</button>
+              <button type="button" class="filter-modal-chip" data-group="raca" data-val="AMARELA"
+                onclick="App.toggleModalChip(this)">Amarela</button>
+            </div>
+          </div>
+
+          <!-- Escolaridade -->
+          <div class="filter-modal-field">
+            <label class="filter-modal-label">Grau de Instrução / Escolaridade:</label>
+            <div class="filter-chips-grid" id="modalFilterInstrucao">
+              <button type="button" class="filter-modal-chip" data-group="instrucao" data-val="SUPERIOR COMPLETO"
+                onclick="App.toggleModalChip(this)">Superior Completo</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao" data-val="SUPERIOR INCOMPLETO"
+                onclick="App.toggleModalChip(this)">Superior Incompleto</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao" data-val="ENSINO MÉDIO COMPLETO"
+                onclick="App.toggleModalChip(this)">Ensino Médio Completo</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao" data-val="ENSINO MÉDIO INCOMPLETO"
+                onclick="App.toggleModalChip(this)">Ensino Médio Incompleto</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao"
+                data-val="ENSINO FUNDAMENTAL COMPLETO" onclick="App.toggleModalChip(this)">Ensino Fundamental
+                Completo</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao"
+                data-val="ENSINO FUNDAMENTAL INCOMPLETO" onclick="App.toggleModalChip(this)">Ensino Fundamental
+                Incompleto</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao" data-val="LÊ E ESCREVE"
+                onclick="App.toggleModalChip(this)">Lê e Escreve</button>
+              <button type="button" class="filter-modal-chip" data-group="instrucao" data-val="ANALFABETO"
+                onclick="App.toggleModalChip(this)">Analfabeto</button>
+            </div>
+          </div>
+
+          <!-- Faixa Etária / Idade -->
+          <div class="filter-modal-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+              <label class="filter-modal-label" style="margin-bottom: 0;">Faixa Etária / Idade:</label>
+              <button type="button" class="btn-text-discreet" onclick="App.clearModalFaixaEtaria()">Todas as
+                Idades</button>
+            </div>
+            <div class="filter-chips-grid" id="modalFilterFaixaEtaria">
+              <button type="button" class="filter-modal-chip" data-group="faixa_etaria" data-val="18-24"
+                onclick="App.toggleModalChip(this)">18 a 24 anos</button>
+              <button type="button" class="filter-modal-chip" data-group="faixa_etaria" data-val="25-34"
+                onclick="App.toggleModalChip(this)">25 a 34 anos</button>
+              <button type="button" class="filter-modal-chip" data-group="faixa_etaria" data-val="35-44"
+                onclick="App.toggleModalChip(this)">35 a 44 anos</button>
+              <button type="button" class="filter-modal-chip" data-group="faixa_etaria" data-val="45-59"
+                onclick="App.toggleModalChip(this)">45 a 59 anos</button>
+              <button type="button" class="filter-modal-chip" data-group="faixa_etaria" data-val="60+"
+                onclick="App.toggleModalChip(this)">60 anos ou mais</button>
+            </div>
+          </div>
+
+          <!-- Profissão / Ocupação (Pesquisável e Selecionável) -->
+          <div class="filter-modal-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+              <label class="filter-modal-label" style="margin-bottom: 0;">Profissão / Ocupação Principal:</label>
+              <button type="button" class="btn-text-discreet" onclick="App.clearModalProfissao()">Todas as
+                Ocupações</button>
+            </div>
+            <input type="text" class="form-input" id="modalProfissaoSearch"
+              placeholder="🔍 Buscar ocupação (ex: Advogado, Médico, Professor)..."
+              oninput="App.filterModalProfissaoList(this.value)"
+              style="font-size: 0.76rem; padding: 0.38rem 0.55rem; width: 100%; margin-bottom: 0.35rem; background: var(--bg-page);">
+            <div class="modal-occupations-scroll-list" id="modalProfissaoListContainer">
+              <!-- Preenchido dinamicamente via JS -->
+            </div>
+          </div>
+
+          <!-- Estado Civil -->
+          <div class="filter-modal-field">
+            <label class="filter-modal-label">Estado Civil:</label>
+            <div class="filter-chips-grid" id="modalFilterEstadoCivil">
+              <button type="button" class="filter-modal-chip" data-group="estado_civil" data-val="CASADO(A)"
+                onclick="App.toggleModalChip(this)">Casado(a)</button>
+              <button type="button" class="filter-modal-chip" data-group="estado_civil" data-val="SOLTEIRO(A)"
+                onclick="App.toggleModalChip(this)">Solteiro(a)</button>
+              <button type="button" class="filter-modal-chip" data-group="estado_civil" data-val="DIVORCIADO(A)"
+                onclick="App.toggleModalChip(this)">Divorciado(a)</button>
+              <button type="button" class="filter-modal-chip" data-group="estado_civil" data-val="VIÚVO(A)"
+                onclick="App.toggleModalChip(this)">Viúvo(a)</button>
+              <button type="button" class="filter-modal-chip" data-group="estado_civil"
+                data-val="SEPARADO(A) JUDICIALMENTE" onclick="App.toggleModalChip(this)">Separado(a)
+                Judicialmente</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco 5: Patrimônio & Finanças (Sliders Interativos) -->
+        <div class="filter-modal-section">
+          <div class="filter-modal-section-title">
+            <span>💰</span> Patrimônio &amp; Finanças
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <!-- Slider de Bens Declarados -->
+            <div class="modal-slider-box">
+              <div class="modal-slider-header">
+                <span class="modal-slider-label">Bens Declarados:</span>
+                <span class="modal-slider-val" id="modalSliderBensVal">Todos os patrimônios</span>
+              </div>
+              <input type="range" min="0" max="10000000" step="100000" value="0" id="modalSliderBens"
+                class="modal-slider-input" style="accent-color: #10B981;"
+                oninput="App.onModalSliderChange('bens', this.value)">
+              <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted);">
+                <span>R$ 0</span>
+                <button type="button" class="btn-text-discreet" onclick="App.clearModalSlider('bens')">Sem
+                  limite</button>
+                <span>R$ 10M+</span>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <!-- Slider de Gastos -->
+              <div class="modal-slider-box">
+                <div class="modal-slider-header">
+                  <span class="modal-slider-label">Gastos a partir de:</span>
+                  <span class="modal-slider-val" id="modalSliderGastosVal">R$ 0</span>
+                </div>
+                <input type="range" min="0" max="5000000" step="50000" value="0" id="modalSliderGastos"
+                  class="modal-slider-input" style="accent-color: #10B981;"
+                  oninput="App.onModalSliderChange('gastos', this.value)">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted);">
+                  <span>R$ 0</span>
+                  <button type="button" class="btn-text-discreet"
+                    onclick="App.clearModalSlider('gastos')">Limpar</button>
+                  <span>R$ 5M+</span>
+                </div>
+              </div>
+
+              <!-- Slider de Receitas -->
+              <div class="modal-slider-box">
+                <div class="modal-slider-header">
+                  <span class="modal-slider-label">Receitas a partir de:</span>
+                  <span class="modal-slider-val" id="modalSliderReceitasVal">R$ 0</span>
+                </div>
+                <input type="range" min="0" max="5000000" step="50000" value="0" id="modalSliderReceitas"
+                  class="modal-slider-input" style="accent-color: #10B981;"
+                  oninput="App.onModalSliderChange('receitas', this.value)">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted);">
+                  <span>R$ 0</span>
+                  <button type="button" class="btn-text-discreet"
+                    onclick="App.clearModalSlider('receitas')">Limpar</button>
+                  <span>R$ 5M+</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ranking de Financiamento de Campanha (No Partido vs No Cargo) -->
+            <div class="modal-campanha-ranking-box"
+              style="background: var(--bg-page); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem; margin-top: 0.35rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span
+                  style="font-size: 0.76rem; font-weight: 800; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.04em;">
+                  📊 Financiamento de Campanha (Ranking)
+                </span>
+                <button type="button" class="btn-text-discreet" id="modalCampanhaClearBtn"
+                  onclick="App.clearModalCampanhaRanking()" style="display: none;">Limpar</button>
+              </div>
+
+              <div style="font-size: 0.70rem; color: var(--text-muted); margin-bottom: 0.55rem; line-height: 1.35;">
+                Filtre os candidatos com maior prioridade financeira dentro de cada legenda partidária ou no cargo e
+                estado geral.
+              </div>
+
+              <!-- Comparar Ranking (Partido vs Cargo) -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.5rem;">
+                <button type="button" class="btn-mandate-toggle active" id="modalCampanhaEscopoPartido"
+                  onclick="App.setModalCampanhaEscopo('partido')">
+                  🏛️ No Partido
+                </button>
+                <button type="button" class="btn-mandate-toggle" id="modalCampanhaEscopoCargo"
+                  onclick="App.setModalCampanhaEscopo('cargo')">
+                  🎖️ No Cargo / UF
+                </button>
+              </div>
+
+              <!-- Métrica (Arrecadação vs Gastos) -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.6rem;">
+                <button type="button" class="btn-mandate-toggle active" id="modalCampanhaMetricaReceita"
+                  onclick="App.setModalCampanhaMetrica('receitas')">
+                  💰 Arrecadação
+                </button>
+                <button type="button" class="btn-mandate-toggle" id="modalCampanhaMetricaGasto"
+                  onclick="App.setModalCampanhaMetrica('gastos')">
+                  💸 Despesas (Gastos)
+                </button>
+              </div>
+
+              <!-- Faixa / Atalhos de Posição -->
+              <div
+                style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.25rem;">
+                <span
+                  style="font-size: 0.70rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">Faixa
+                  de Colocação:</span>
+                <span id="modalCampanhaRangeLabel"
+                  style="font-size: 0.74rem; font-weight: 800; color: var(--accent-petroleo);">Todos os
+                  candidatos</span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem;">
+                <button type="button" class="btn-text-discreet" id="modalCampanhaPresetTop5"
+                  style="border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.35rem 0.4rem; font-size: 0.70rem; text-align: center;"
+                  onclick="App.setModalCampanhaPreset(1, 5)">
+                  Top 5
+                </button>
+                <button type="button" class="btn-text-discreet" id="modalCampanhaPresetTop10"
+                  style="border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.35rem 0.4rem; font-size: 0.70rem; text-align: center;"
+                  onclick="App.setModalCampanhaPreset(1, 10)">
+                  Top 10
+                </button>
+                <button type="button" class="btn-text-discreet" id="modalCampanhaPresetTop20"
+                  style="border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.35rem 0.4rem; font-size: 0.70rem; text-align: center;"
+                  onclick="App.setModalCampanhaPreset(1, 20)">
+                  Top 20
+                </button>
+                <button type="button" class="btn-text-discreet active" id="modalCampanhaPresetTodos"
+                  style="border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 0.35rem 0.4rem; font-size: 0.70rem; text-align: center;"
+                  onclick="App.setModalCampanhaPreset(1, null)">
+                  Todos
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer"
+        style="flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding: 0.85rem 1.25rem;">
+        <button type="button" class="btn-clear-filters" onclick="App.clearAllModalFilters()">
+          ✕ Limpar Tudo
+        </button>
+        <button type="button" class="btn-header primary" style="padding: 0.45rem 1.2rem; font-size: 0.82rem;"
+          onclick="App.applyMoreFiltersModal()">
+          ✓ Aplicar Filtros
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé Institucional Editorial (100% Petróleo) -->
+  <!-- Rodapé Institucional Editorial (100% Petróleo) -->
+  <footer class="app-footer">
+    <div class="footer-inner-wrap">
+      <div class="footer-brand-title">Em Quem Eu Voto 2026</div>
+      <div class="footer-brand-sub">Por um voto bem informado</div>
+      
+      <!-- Linha 1: Fontes Oficiais & Data da Base -->
+      <div class="footer-meta-row">
+        <span>🏛️ Dados Oficiais: TSE &amp; Congresso Nacional</span>
+        <span>·</span>
+        <span id="footerLastUpdated">Atualizado em 07/09/2026 às 19:30</span>
+      </div>
+
+      <!-- Linha 2: Links Institucionais e Sociais -->
+      <div class="footer-links-row">
+        <a href="https://linktr.ee/viniciuspinon" target="_blank" rel="noopener" class="footer-link">
+          <span>🌐 Site Oficial</span>
+        </a>
+        <span>·</span>
+        <a href="https://viniciuspinon.substack.com/" target="_blank" rel="noopener" class="footer-link">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="#D95338">
+            <path
+              d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+          </svg>
+          <span>Substack</span>
+        </a>
+        <span>·</span>
+        <a href="https://github.com/viniciuspinon" target="_blank" rel="noopener" class="footer-link">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <span>·</span>
+        <a href="javascript:void(0)" onclick="App.openApoieModal()" class="footer-link-apoie">
+          <span>💖 Apoie o Projeto</span>
+        </a>
+      </div>
+
+      <!-- Linha 3: Copyright Isolado na Base -->
+      <div class="footer-copyright-row" style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.72rem; color: rgba(255, 255, 255, 0.65);">
+        <span>Copyright © 2026 Em Quem Eu Voto. Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Overlay do Mini Tutorial Interativo (Ativa apenas quando o usuário clica) -->
+  <div id="tutorialTourOverlay" class="tutorial-tour-overlay" style="display: none;" role="dialog" aria-modal="true"
+    aria-label="Tutorial do Em Quem Eu Voto">
+    <div class="tutorial-backdrop" onclick="TutorialTour.close()"></div>
+    <div class="tutorial-spotlight-box" id="tutorialSpotlightBox"></div>
+
+    <!-- Barra Superior do Tour com Botão Pular -->
+    <button type="button" class="btn-tutorial-skip" onclick="TutorialTour.close()" title="Pular tour e fechar">
+      <span>Pular tour</span>
+      <span class="btn-tutorial-close-x">✕</span>
+    </button>
+
+    <!-- Dica no Rodapé Esquerdo -->
+    <div class="tutorial-bottom-hint">
+      <div class="tutorial-hint-badge">?</div>
+      <div class="tutorial-hint-body">
+        <strong>Precisa de ajuda depois?</strong>
+        <span>Você sempre pode rever este tutorial no menu do site.</span>
+      </div>
+    </div>
+
+    <!-- Balão Popover do Passo Atual -->
+    <div class="tutorial-popover-card" id="tutorialPopoverCard">
+      <div class="tutorial-popover-header">
+        <div class="tutorial-step-badge" id="tutorialStepBadge">1</div>
+        <h3 class="tutorial-step-title" id="tutorialStepTitle">Comece pelos filtros</h3>
+      </div>
+      <p class="tutorial-step-desc" id="tutorialStepDesc">
+        Escolha o estado, o cargo e outros critérios para encontrar os candidatos que você quer explorar.
+      </p>
+      <div class="tutorial-popover-footer">
+        <span class="tutorial-progress-counter" id="tutorialProgressCounter">1/6</span>
+        <div class="tutorial-nav-group">
+          <button type="button" class="btn-tutorial-nav btn-tutorial-prev" id="btnTutorialPrev"
+            onclick="TutorialTour.prev()">
+            ← Anterior
+          </button>
+          <button type="button" class="btn-tutorial-nav btn-tutorial-next" id="btnTutorialNext"
+            onclick="TutorialTour.next()">
+            Próximo →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Navegação Inferior Móvel (One-Handed Thumb Navigation) -->
+  <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Navegação móvel inferior">
+    <button type="button" class="mobile-nav-item" onclick="App.openMobileSidebar()" id="mobNavFilters">
+      <div class="mobile-nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+        </svg>
+        <span class="mobile-nav-badge" id="mobNavFilterBadge" style="display: none;">0</span>
+      </div>
+      <span>Filtros</span>
+    </button>
+    <button type="button" class="mobile-nav-item" onclick="App.focusMobileSearch()" id="mobNavSearch">
+      <div class="mobile-nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+      <span>Buscar</span>
+    </button>
+    <button type="button" class="mobile-nav-item" onclick="ListManager.openSavedModal()" id="mobNavColinha">
+      <div class="mobile-nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="mobile-nav-badge" id="mobNavSavedBadge" style="display: none;">0</span>
+      </div>
+      <span>Salvos</span>
+    </button>
+    <button type="button" class="mobile-nav-item" onclick="QuizController.open()" id="mobNavQuiz">
+      <div class="mobile-nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          <circle cx="12" cy="12" r="10"></circle>
+        </svg>
+      </div>
+      <span>Quiz</span>
+    </button>
+    <button type="button" class="mobile-nav-item" onclick="App.scrollToTop()" id="mobNavTop">
+      <div class="mobile-nav-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </div>
+      <span>Topo</span>
+    </button>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="/static/js/qrcode.js"></script>
+  <script src="/static/js/lists.js?v=20260917_v27"></script>
+  <script src="/static/js/quiz.js?v=20260917_v27"></script>
+  <script src="/static/js/compare.js?v=20260917_v27"></script>
+  <script src="/static/js/export.js?v=20260917_v27"></script>
+  <script src="/static/js/app.js?v=20260917_v27"></script>
+</body>
+
+</html>

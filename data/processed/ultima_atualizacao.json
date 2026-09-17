@@ -1,0 +1,10 @@
+{
+  "timestamp_iso": "2026-09-16T20:37:37.916717-03:00",
+  "data_formatada": "16/09/2026 20:37 BRT",
+  "sucesso": true,
+  "detalhes": {
+    "modo": "completo",
+    "total_candidatos": 20060,
+    "tempo_segundos": 193.04
+  }
+}
