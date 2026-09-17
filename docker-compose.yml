@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: emquemeuvoto_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/emquemeuvoto.duckdb:/app/data/emquemeuvoto.duckdb:ro
+    restart: unless-stopped
+    environment:
+      - PORT=8000

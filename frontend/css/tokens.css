@@ -1,0 +1,272 @@
+/* ==========================================================================
+   EM QUEM EU VOTO — DESIGN TOKENS (v2.0 Editorial)
+   Fonte de verdade: /refs/design_kit/DESIGN_SYSTEM.md
+   ========================================================================== */
+
+/* ── 01. Cores canônicas ─────────────────────────────────────────────────── */
+:root {
+  /* Canvas neutro da aplicação (limpo, alta legibilidade, padrão broadsheet) */
+  --eqv-canvas:        #F6F7F9;
+  --eqv-white:         #FFFFFF;
+
+  /* Superfícies quentes de papel editorial (usadas em cards, briefings, tabelas e painéis) */
+  --eqv-paper:         #FAF6F0;
+  --eqv-paper-deep:    #F2E8DC;
+  --eqv-paper-subtle:  #EDE3D5;
+
+  /* Tinta & hairlines de imprensa */
+  --eqv-ink:           #111418;
+  --eqv-muted:         #635B54;
+  --eqv-border:        #D8CCC0;
+  --eqv-border-subtle: #E8DFD5;
+
+  /* Acentos de identidade — Petróleo / Teal + Terracota / Coral */
+  --eqv-petroleum:     #005B68;
+  --eqv-petroleum-dark:#004550;
+  --eqv-teal:          #00AFA5;
+  --eqv-terracota:     #C84B31;
+  --eqv-coral:         #D95338;
+  --eqv-yellow:        #E5B800;  /* Amarelo restrito a micro-realces editoriais e estrelas */
+  --eqv-purple:        #7654D8;
+  --eqv-blue:          #1E6BB8;
+  --eqv-green:         #087F5B;
+
+  /* Dark mode – superfícies */
+  --eqv-dark-bg:        #101216;
+  --eqv-dark-surface:   #181B22;
+  --eqv-dark-surface-2: #222732;
+  --eqv-dark-text:      #F5EDE4;
+  --eqv-dark-muted:     #A39D95;
+  --eqv-dark-border:    #2E3540;
+
+  /* ── 02. Espaçamento (base 4 px) ────────────────────────────────────────── */
+  --eqv-space-1:   4px;
+  --eqv-space-2:   8px;
+  --eqv-space-3:  12px;
+  --eqv-space-4:  16px;
+  --eqv-space-5:  20px;
+  --eqv-space-6:  24px;
+  --eqv-space-8:  32px;
+  --eqv-space-10: 40px;
+  --eqv-space-12: 48px;
+  --eqv-space-16: 64px;
+
+  /* ── 03. Radius (restrito 2–8 px) ───────────────────────────────────────── */
+  --eqv-radius-sm:  2px;
+  --eqv-radius-md:  4px;
+  --eqv-radius-lg:  6px;
+  --eqv-radius-xl:  8px;
+
+  /* ── 04. Tipografia ─────────────────────────────────────────────────────── */
+  --eqv-font-display: 'DM Serif Display', 'Playfair Display', Georgia, serif;
+  --eqv-font-sans:     Inter, 'IBM Plex Sans', 'Source Sans 3', Arial, sans-serif;
+  --eqv-font-mono:    'JetBrains Mono', Consolas, monospace;
+
+  /* ── 05. Motion ─────────────────────────────────────────────────────────── */
+  --eqv-transition-fast: 120ms ease;
+  --eqv-transition-base: 180ms ease;
+  --eqv-transition-slow: 240ms ease;
+}
+
+/* ── 06. Aliases semânticas – Light (padrão) ──────────────────────────────── */
+:root {
+  --eqv-page:           var(--eqv-canvas);
+  --eqv-surface:        var(--eqv-paper);
+  --eqv-surface-2:      var(--eqv-paper-deep);
+  --eqv-text:           var(--eqv-ink);
+  --eqv-text-muted:     var(--eqv-muted);
+  --eqv-border-current: var(--eqv-border);
+}
+
+/* ── 07. Aliases semânticas – Dark ────────────────────────────────────────── */
+[data-theme="dark"],
+body.dark-mode {
+  --eqv-page:           var(--eqv-dark-bg);
+  --eqv-surface:        var(--eqv-dark-surface);
+  --eqv-surface-2:      var(--eqv-dark-surface-2);
+  --eqv-text:           var(--eqv-dark-text);
+  --eqv-text-muted:     var(--eqv-dark-muted);
+  --eqv-border-current: var(--eqv-dark-border);
+}
+
+/* ==========================================================================
+   ESCALA TIPOGRÁFICA EDITORIAL
+   ========================================================================== */
+
+.eqv-display-xl {
+  font-family: var(--eqv-font-display);
+  font-size: 3.5rem;
+  line-height: 1.071;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.eqv-display-l {
+  font-family: var(--eqv-font-display);
+  font-size: 2.75rem;
+  line-height: 1.091;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.eqv-h1 {
+  font-family: var(--eqv-font-display);
+  font-size: 2.25rem;
+  line-height: 1.111;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.eqv-h2 {
+  font-family: var(--eqv-font-display);
+  font-size: 1.75rem;
+  line-height: 1.143;
+  font-weight: 400;
+}
+
+.eqv-h3 {
+  font-family: var(--eqv-font-display);
+  font-size: 1.375rem;
+  line-height: 1.182;
+  font-weight: 400;
+}
+
+.eqv-body-l {
+  font-family: var(--eqv-font-sans);
+  font-size: 1.125rem;
+  line-height: 1.444;
+}
+
+.eqv-body {
+  font-family: var(--eqv-font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.467;
+}
+
+.eqv-body-s {
+  font-family: var(--eqv-font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.385;
+}
+
+.eqv-caption {
+  font-family: var(--eqv-font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.273;
+}
+
+.eqv-eyebrow {
+  font-family: var(--eqv-font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.273;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   MOTIVOS EDITORIAIS REUTILIZÁVEIS
+   ========================================================================== */
+
+/* Destaque editorial sutil */
+.eqv-highlight {
+  background-image: linear-gradient(
+    transparent 65%,
+    rgba(200, 75, 49, 0.18) 65%,
+    rgba(200, 75, 49, 0.28) 95%,
+    transparent 95%
+  );
+  padding: 0 0.12em;
+}
+
+/* Régua editorial forte (1px ink) */
+.eqv-rule {
+  border: none;
+  border-top: 1px solid var(--eqv-ink);
+  margin: var(--eqv-space-4) 0;
+}
+
+.eqv-rule--subtle {
+  border-top-color: var(--eqv-border);
+}
+
+/* Régua dupla editorial (3px + 1px) */
+.eqv-rule--double {
+  border: none;
+  border-top: 3px solid var(--eqv-petroleum);
+  padding-top: 2px;
+  margin: var(--eqv-space-4) 0;
+  position: relative;
+}
+.eqv-rule--double::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 1px;
+  background: var(--eqv-petroleum);
+}
+
+/* Bloco de dado editorial (número grande + legenda) */
+.eqv-data-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eqv-data-block__number {
+  font-family: var(--eqv-font-display);
+  font-size: 2.25rem;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--eqv-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.eqv-data-block__label {
+  font-family: var(--eqv-font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.273;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--eqv-text-muted);
+}
+
+/* Destaque da logo (EU VOTO) em terracota cívico editorial */
+.brand-highlight {
+  background: #C84B31;
+  color: #FFFFFF !important;
+  padding: 0.12rem 0.55rem;
+  border-radius: 4px;
+  font-weight: 800;
+  display: inline-block;
+  letter-spacing: -0.01em;
+  border: none !important;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .brand-highlight,
+body.dark-mode .brand-highlight {
+  background: #C84B31;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+/* Efeito marca-texto editorial (highlighter pen) */
+.marker-highlight {
+  background: linear-gradient(180deg, transparent 46%, rgba(200, 75, 49, 0.30) 46%, rgba(200, 75, 49, 0.42) 92%, transparent 92%);
+  padding: 0 0.12em;
+  border-radius: 2px;
+}
+
+/* Citação / Destaque editorial (chamada com traço terracota) */
+.eqv-quote {
+  background: var(--eqv-surface);
+  border-left: 4px solid var(--eqv-terracota);
+  padding: var(--eqv-space-3) var(--eqv-space-4);
+  font-family: var(--eqv-font-display);
+  font-style: italic;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--eqv-text);
+}
