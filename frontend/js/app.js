@@ -2216,7 +2216,7 @@ const App = {
   },
 
   openMetodologiaModal() {
-    this.openSobreModal();
+    window.open("/docs/relatorio_ideologia_e_quiz.pdf", "_blank");
   },
 
   closeMetodologiaModal() {
